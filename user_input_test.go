@@ -68,3 +68,10 @@ func TestForCaseInsensitiveUserInput(t *testing.T) {
 		}
 	}
 }
+
+// Benchmark test for validateInput() func
+func BenchmarkUserInputValidator(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = validateInput([]string{"king", "a1"})
+	}
+}
