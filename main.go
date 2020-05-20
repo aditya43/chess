@@ -64,8 +64,12 @@ func printInfo() {
 	fmt.Print("Input: ")
 }
 
+// Exit program if user typed 'exit'
 func checkExit(s string) {
-	// Exit program if user typed 'exit'
+	if strings.HasPrefix(strings.ToLower(s), "exit") {
+		fmt.Println("Good bye!🍺")
+		os.Exit(0)
+	}
 }
 
 func restartProgram() {
