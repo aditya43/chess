@@ -49,3 +49,22 @@ func TestForCorrectUserInput(t *testing.T) {
 		}
 	}
 }
+
+// Test if no error is returned for case-insensitive user input
+func TestForCaseInsensitiveUserInput(t *testing.T) {
+	inputs := [5][]string{
+		{"qUeEn", "d4"},
+		{"rOOk", "c8"},
+		{"Bishop", "a1"},
+		{"paWn", "h5"},
+		{"kIng", "e7"},
+	}
+
+	for _, v := range inputs {
+		err := validateInput([]string{v[0], v[1]})
+
+		if err != nil {
+			t.Fatalf("Failed to validate case-insensitive user input! Error: %v", err)
+		}
+	}
+}
