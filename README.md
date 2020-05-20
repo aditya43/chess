@@ -6,6 +6,10 @@ WIP (Work In Progress)!
 
 ## Implementation Flow (Developer Notes)
 > This will be modified as the process goes from rough draft to final implementation.
+- **User Interaction:**
+    - User inputs will be case-insensitive.
+    - Input piece name and piece position.
+    - Type `exit` to quit program.
 - Create 8x8 chessboard with position acronyms (a1-a8)..(h1-h8).
 - Chessboard struct:
     ```go

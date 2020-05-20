@@ -25,6 +25,7 @@ func main() {
 	}
 }
 
+// Take action based off user input
 func takeAction(w []string) {
 	err := validateInput(w)
 
