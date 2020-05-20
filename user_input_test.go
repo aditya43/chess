@@ -12,3 +12,12 @@ func TestForSingleWordInput(t *testing.T) {
 		t.Fatalf("Failed to validate single word user input! Error: %v", err)
 	}
 }
+
+// Test if error is returned when user inputs an invalid piece name
+func TestForInvalidPieceNameInput(t *testing.T) {
+	err := validateInput([]string{"invalid-piece-name", "a1"})
+
+	if err == nil {
+		t.Fatalf("Failed to validate invalid piece name user input! Error: %v", err)
+	}
+}
