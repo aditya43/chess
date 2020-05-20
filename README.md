@@ -55,6 +55,9 @@ piece.
     * Bishop
         - Can move across the board only diagonally
 
+# 3rd Party Libraries Used
+- `github.com/gookit/color`: For printing colorful text in terminal
+
 # APIs
 - **ChessBoard**
     * `CreateChessBoard()`: Create cells with their numeric identifiers and return a pointer to the `ChessBoard struct`.

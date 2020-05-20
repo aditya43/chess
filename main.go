@@ -2,9 +2,11 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strings"
-	// For printing colorful text in terminal
+
+	"github.com/gookit/color" // For printing colorful text in terminal
 )
 
 var cr *bufio.Reader
@@ -43,8 +45,23 @@ func validateInput(w []string) error {
 	return nil
 }
 
+// Print information about how to use this program
 func printInfo() {
-	// Print information about how to use this program
+	print("\033[H\033[2J") // Ansi escape sequence to clear the screen
+	fmt.Println("Enter a piece type and it's position")
+	fmt.Println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+	color.New(color.FgGreen, color.BgBlack, color.OpBold).Println("👍 Program is not case-sensitive.")
+	color.New(color.FgGreen, color.BgBlack, color.OpBold).Print("👍 Type ")
+	color.BgRed.Print("exit")
+	color.New(color.FgGreen, color.BgBlack, color.OpBold).Println(" to quit program.")
+	fmt.Print("\n")
+
+	fmt.Print("Piece types: ")
+	color.Yellow.Println("King, Queen, Bishop, Horse, Rook, Pawn")
+	fmt.Print("Example input: ")
+	color.Style{color.FgGreen, color.OpBold}.Println("King D5")
+	fmt.Println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+	fmt.Print("Input: ")
 }
 
 func checkExit(s string) {
