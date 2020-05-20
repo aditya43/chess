@@ -33,7 +33,7 @@ func takeAction(w []string) {
 	err := validateInput(w)
 
 	if err != nil {
-		// Print error
+		color.Error.Println(err)
 		restartProgram()
 		return
 	}
