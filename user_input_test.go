@@ -30,3 +30,22 @@ func TestForInvalidPositionInput(t *testing.T) {
 		t.Fatalf("Failed to validate invalid position user input! Error: %v", err)
 	}
 }
+
+// Test if no error is returned for a correct input
+func TestForCorrectUserInput(t *testing.T) {
+	inputs := [5][]string{
+		{"queen", "d4"},
+		{"rook", "c8"},
+		{"bishop", "a1"},
+		{"pawn", "h5"},
+		{"king", "e7"},
+	}
+
+	for _, v := range inputs {
+		err := validateInput([]string{v[0], v[1]})
+
+		if err != nil {
+			t.Fatalf("Failed to validate correct user input! Error: %v", err)
+		}
+	}
+}
