@@ -1,8 +1,48 @@
 ## Chess
 Simple program simulating movements of various types of pieces on the empty chessboard.
 
+------
+
 ## Current Status
 WIP (Work In Progress)!
+
+------
+
+## 3rd Party Libraries Used
+- `github.com/gookit/color`: For printing colorful text in terminal
+
+------
+
+## APIs
+- **ChessBoard**
+    * `CreateChessBoard()`: Create cells with their numeric identifiers and return a pointer to the `ChessBoard struct`.
+    * `placePiece()`: Place piece on a chessboard and update available move positions for a piece.
+    * `print()`: Render chessboard with a piece.
+- **Piece**
+    * `CreatePiece()`: Create a piece.
+    * `updatePositions()`: Calculate and add available move positions for a piece based off it's current position.
+
+------
+
+## Tests
+- **Unit Tests**
+    ```diff
+    // User Input | user_input_test.go
+    + TestForSingleWordInput
+    + TestForInvalidPieceNameInput
+    + TestForInvalidPositionInput
+    + TestForCorrectUserInput
+    + TestForCaseInsensitiveUserInput
+    + BenchmarkUserInputValidator
+    ```
+
+- **Benchmark Tests**
+    ```diff
+    // User Input Validator | user_input_test.go
+    - BenchmarkUserInputValidator
+    ```
+
+------
 
 ## Implementation Flow (Developer Notes)
 > This will be modified as the process goes from rough draft to final implementation.
@@ -55,25 +95,7 @@ piece.
     * Bishop
         - Can move across the board only diagonally
 
-# 3rd Party Libraries Used
-- `github.com/gookit/color`: For printing colorful text in terminal
-
-# APIs
-- **ChessBoard**
-    * `CreateChessBoard()`: Create cells with their numeric identifiers and return a pointer to the `ChessBoard struct`.
-    * `placePiece()`: Place piece on a chessboard and update available move positions for a piece.
-    * `print()`: Render chessboard with a piece.
-- **Piece**
-    * `CreatePiece()`: Create a piece.
-    * `updatePositions()`: Calculate and add available move positions for a piece based off it's current position.
-
-# Test Cases
-- Is the chessboard created.
-- User inputs:
-    * Valid piece name is entered.
-    * Valid position is entered.
-- Can `X` piece move at `Y` location.
-- Get current positions of all pieces.
+------
 
 ## License
 Open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
