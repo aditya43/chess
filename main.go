@@ -115,7 +115,7 @@ func restartProgram() {
 	// TODO: Delete piece
 	color.Yellow.Println("Hit Enter key to continue")
 	s, _ := cr.ReadString('\n')
-	checkExit(s)
+	checkExit(s) // Use can quit program by typing 'exit'
 }
 
 func printOutput() {
