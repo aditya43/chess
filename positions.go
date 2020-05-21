@@ -45,21 +45,44 @@ func (p *Piece) addPositions(b *ChessBoard, l int, max int, d Direction, f int) 
 // Add move position for a horse
 func (p *Piece) addHorsePositions(b *ChessBoard) {
 	// 2 left, 1 top move
+	if canMakeTwoLeftOneTop(p.curPos) {
+		p.availPos[p.curPos-15] = true
+	}
 
 	// 2 left, 1 down move
+	if canMakeTwoLeftOneDown(p.curPos) {
+		p.availPos[p.curPos-17] = true
+	}
 
 	// 2 top, 1 left move
+	if canMakeTwoTopOneLeft(p.curPos) {
+		p.availPos[p.curPos-6] = true
+	}
 
 	// 2 down, 1 left move
+	if canMakeTwoDownOneLeft(p.curPos) {
+		p.availPos[p.curPos-10] = true
+	}
 
 	// 2 down, 1 right move
+	if canMakeTwoDownOneRight(p.curPos) {
+		p.availPos[p.curPos+6] = true
+	}
 
 	// 2 right, 1 down move
+	if canMakeTwoRightOneDown(p.curPos) {
+		p.availPos[p.curPos+15] = true
+	}
 
 	// 2 right, 1 top move
+	if canMakeTwoRightOneTop(p.curPos) {
+		p.availPos[p.curPos+17] = true
+	}
 
 	// 2 top, 1 right move
-
+	if canMakeTwoTopOneRight(p.curPos) {
+		p.availPos[p.curPos+10] = true
+	}
 }
 
 // Can a piece move 2 left, 1 top
