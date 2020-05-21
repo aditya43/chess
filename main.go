@@ -40,6 +40,11 @@ func takeAction(w []string) {
 		restartProgram()
 		return
 	}
+
+	pos := cb.strCells[w[1]] // Get numeric position for a cell
+
+	p = CreatePiece(pos, w[0]) // Create a piece
+	cb.placePiece(pos, p)      // Place a piece on chessboard
 	printOutput()
 	restartProgram()
 }
@@ -101,6 +106,7 @@ func printInfo() {
 	color.Yellow.Println("King, Queen, Bishop, Horse, Rook, Pawn")
 	fmt.Print("Example input: ")
 	color.Style{color.FgGreen, color.OpBold}.Println("King D5")
+
 	fmt.Println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 	fmt.Print("Input: ")
 }
@@ -118,7 +124,7 @@ func restartProgram() {
 	p = nil // Delete piece
 	color.Yellow.Println("Hit Enter key to continue")
 	s, _ := cr.ReadString('\n')
-	checkExit(s) // Use can quit program by typing 'exit'
+	checkExit(s) // User can quit program by typing 'exit'
 }
 
 // Print available move positions for a piece on chaseboard
