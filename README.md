@@ -160,6 +160,8 @@ piece.
         }
     }
     ```
+- To calculate move positions in various directions from the current position of the piece:
+![Move Positions Calculations](/images/move-positions.jpg)
 
 ------
 
