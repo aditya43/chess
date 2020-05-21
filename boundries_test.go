@@ -27,3 +27,15 @@ func TestRightBoundryIsSetForPieceIfItCanMoveOnXAxis(t *testing.T) {
 
 	p = nil
 }
+
+// Test if a correct left boundry is set for a piece
+func TestCorrectLeftBoundryIsSetForPiece(t *testing.T) {
+	p = CreatePiece(20, "rook")
+	p.setLeftBoundry()
+
+	if p.xBoundry.left != 4 {
+		t.Fatalf("Failed to test if a correct left boundry is set for a piece. Expected: %v. Got: %v", 20, p.xBoundry.left)
+	}
+
+	p = nil
+}
