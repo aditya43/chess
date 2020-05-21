@@ -131,7 +131,26 @@ func (p *Piece) setTopLeftBoundry() {
 
 // Calculate top-right boundry based off current position of a piece
 func (p *Piece) setTopRightBoundry() {
-	//
+	pos := p.curPos
+
+	for i := 0; i < 8; i++ {
+		if pos > 64 {
+			return
+		}
+
+		if pos <= 64 {
+			switch pos {
+			case 8, 16, 24, 32, 40, 48, 56: // Top boundry numeric positions on board
+				p.diagonalBoundry.topRight = pos
+				return
+			case 57, 58, 59, 60, 61, 62, 63, 64: // Right boundry numeric positions on board
+				p.diagonalBoundry.topRight = pos
+				return
+			default:
+				pos += 9
+			}
+		}
+	}
 }
 
 // Calculate bottom-right boundry based off current position of a piece
