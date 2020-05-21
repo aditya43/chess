@@ -115,7 +115,7 @@ func checkExit(s string) {
 
 // Ask user to hit Enter key to restart program
 func restartProgram() {
-	// TODO: Delete piece
+	p = nil // Delete piece
 	color.Yellow.Println("Hit Enter key to continue")
 	s, _ := cr.ReadString('\n')
 	checkExit(s) // Use can quit program by typing 'exit'
