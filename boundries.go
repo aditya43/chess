@@ -201,8 +201,7 @@ func (p *Piece) setBottomLeftBoundry() {
 	}
 }
 
-// Set boundries for a piece if it can move on X,
-// Y axis as well as in diagonal direction
+// Set boundries for a piece
 func (p *Piece) setBoundries() {
 	if p.xAllow {
 		p.setLeftBoundry()
@@ -221,5 +220,5 @@ func (p *Piece) setBoundries() {
 		p.setBottomLeftBoundry()
 	}
 
-	// fmt.Printf("%v %8v: %v %v %v %v %v %v %v %v \n", p.symbol, p.name, p.xBoundry.left, p.diagonalBoundry.topLeft, p.yBoundry.top, p.diagonalBoundry.topRight, p.xBoundry.right, p.diagonalBoundry.bottomRight, p.yBoundry.bottom, p.diagonalBoundry.bottomLeft)
+	// fmt.Printf("%v %8v: %v %v %v %v %v %v %v %v \n", p.symbol, p.kind, p.xBoundry.left, p.diagonalBoundry.topLeft, p.yBoundry.top, p.diagonalBoundry.topRight, p.xBoundry.right, p.diagonalBoundry.bottomRight, p.yBoundry.bottom, p.diagonalBoundry.bottomLeft)
 }

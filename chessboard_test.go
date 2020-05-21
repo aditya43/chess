@@ -43,7 +43,7 @@ func TestPlacePieceFuncPlacesPieceOnAChessBoard(t *testing.T) {
 	p = CreatePiece(20, "pawn") // Create a piece
 	cb.placePiece(20, p)
 
-	if cb.pieces[20].name != "pawn" {
+	if cb.pieces[20].kind != "pawn" {
 		t.Fatal("Failed to test if a placePiece() func places piece on a chessboard")
 	}
 
@@ -52,7 +52,14 @@ func TestPlacePieceFuncPlacesPieceOnAChessBoard(t *testing.T) {
 
 // Test if a placePiece() func adds/updates available move positions for a piece
 func TestPlacePieceFuncUpdatesAvailableMovePositionsForPiece(t *testing.T) {
-	// TODO
+	p = CreatePiece(20, "pawn") // Create a piece
+	cb.placePiece(20, p)
+
+	if _, ok := p.availPos[21]; !ok {
+		t.Fatal("Failed to test if a placePiece() func adds/updates available move positions for a piece")
+	}
+
+	p = nil // Delete a piece
 }
 
 // Benchmark test for CreateChessBoard() func
