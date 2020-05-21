@@ -41,3 +41,23 @@ func (p *Piece) addPositions(b *ChessBoard, l int, max int, d Direction, f int) 
 		p.availPos[pos] = true // Add move position
 	}
 }
+
+// Add move position for a horse
+func (p *Piece) addHorsePositions(b *ChessBoard) {
+	// 2 left, 1 top move
+
+	// 2 left, 1 down move
+
+	// 2 top, 1 left move
+
+	// 2 down, 1 left move
+
+	// 2 down, 1 right move
+
+	// 2 right, 1 down move
+
+	// 2 right, 1 top move
+
+	// 2 top, 1 right move
+
+}
