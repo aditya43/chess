@@ -14,3 +14,86 @@ type Piece struct {
 	maxCross   int          // Max number of cells a piece can traverse in diagonal direction
 	availPos   map[int]bool // Available move positions for a piece
 }
+
+// Calculate and add available positions for a piece based off it's current position
+func (p *Piece) updateMovePositions(b *ChessBoard) {
+	//
+}
+
+// Create piece
+// pos: Numeric position of a piece on board
+// n: Piece type
+func CreatePiece(pos int, n string) *Piece {
+	var p *Piece
+
+	switch n {
+	case "rook":
+		p = &Piece{
+			name:       n,
+			curPos:     pos,
+			symbol:     "♖",
+			xAllow:     true,
+			yAllow:     true,
+			crossAllow: false,
+			maxX:       8,
+			maxY:       8,
+		}
+	case "horse":
+		p = &Piece{
+			name:       n,
+			curPos:     pos,
+			symbol:     "♘",
+			isHorse:    true,
+			xAllow:     false,
+			yAllow:     false,
+			crossAllow: false,
+		}
+	case "bishop":
+		p = &Piece{
+			name:       n,
+			curPos:     pos,
+			symbol:     "♗",
+			xAllow:     false,
+			yAllow:     false,
+			crossAllow: true,
+			maxCross:   8,
+		}
+	case "queen":
+		p = &Piece{
+			name:       n,
+			curPos:     pos,
+			symbol:     "♕",
+			xAllow:     true,
+			yAllow:     true,
+			crossAllow: true,
+			maxX:       8,
+			maxY:       8,
+			maxCross:   8,
+		}
+	case "king":
+		p = &Piece{
+			name:       n,
+			curPos:     pos,
+			symbol:     "♔",
+			xAllow:     true,
+			yAllow:     true,
+			crossAllow: true,
+			maxX:       1,
+			maxY:       1,
+			maxCross:   1,
+		}
+	case "pawn":
+		p = &Piece{
+			name:   n,
+			curPos: pos,
+			symbol: "♙",
+			isPawn: true,
+			yAllow: true,
+			maxY:   1,
+		}
+	}
+
+	//TODO: Set boundries for a piece if it can move on X, Y axis as well as diagonally
+
+	return p
+}
