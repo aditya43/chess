@@ -1,18 +1,23 @@
 package main
 
 type Piece struct {
-	name            string          // Name. e.g. king, queen, horse, pawn, rook, bishop
-	curPos          int             // Numeric position on board
-	symbol          string          // e.g. ♚, ♛, ♜, ♝, ♞
-	isHorse         bool            // Is current piece a Horse
-	isPawn          bool            // Is current piece a Pawn
-	xAllow          bool            // Is piece allowed to traverse in X direction
-	yAllow          bool            // Is piece allowed to traverse in Y direction
-	crossAllow      bool            // Is piece allowed to traverse in diagonal direction
-	maxX            int             // Max number of cells a piece can traverse in X direction
-	maxY            int             // Max number of cells a piece can traverse in Y direction
-	maxCross        int             // Max number of cells a piece can traverse in diagonal direction
-	availPos        map[int]bool    // Available move positions for a piece
+	kind   string // Kind of piece. e.g. king, queen, horse, pawn, rook, bishop
+	curPos int    // Numeric position on board
+	symbol string // e.g. ♚, ♛, ♜, ♝, ♞
+
+	isHorse bool // Is current piece a Horse
+	isPawn  bool // Is current piece a Pawn
+
+	xAllow     bool // Is piece allowed to traverse in X direction
+	yAllow     bool // Is piece allowed to traverse in Y direction
+	crossAllow bool // Is piece allowed to traverse in diagonal direction
+
+	maxX     int // Max number of cells a piece can traverse in X direction
+	maxY     int // Max number of cells a piece can traverse in Y direction
+	maxCross int // Max number of cells a piece can traverse in diagonal direction
+
+	availPos map[int]bool // Available move positions for a piece
+
 	xBoundry        XBoundry        // Horizontal boundries
 	yBoundry        YBoundry        // Vertical boundries
 	diagonalBoundry DiagonalBoundry // Diagonal boundries
@@ -87,7 +92,7 @@ func CreatePiece(pos int, n string) *Piece {
 	switch n {
 	case "rook":
 		p = &Piece{
-			name:       n,
+			kind:       n,
 			curPos:     pos,
 			symbol:     "♖",
 			xAllow:     true,
@@ -98,7 +103,7 @@ func CreatePiece(pos int, n string) *Piece {
 		}
 	case "horse":
 		p = &Piece{
-			name:       n,
+			kind:       n,
 			curPos:     pos,
 			symbol:     "♘",
 			isHorse:    true,
@@ -108,7 +113,7 @@ func CreatePiece(pos int, n string) *Piece {
 		}
 	case "bishop":
 		p = &Piece{
-			name:       n,
+			kind:       n,
 			curPos:     pos,
 			symbol:     "♗",
 			xAllow:     false,
@@ -118,7 +123,7 @@ func CreatePiece(pos int, n string) *Piece {
 		}
 	case "queen":
 		p = &Piece{
-			name:       n,
+			kind:       n,
 			curPos:     pos,
 			symbol:     "♕",
 			xAllow:     true,
@@ -130,7 +135,7 @@ func CreatePiece(pos int, n string) *Piece {
 		}
 	case "king":
 		p = &Piece{
-			name:       n,
+			kind:       n,
 			curPos:     pos,
 			symbol:     "♔",
 			xAllow:     true,
@@ -142,7 +147,7 @@ func CreatePiece(pos int, n string) *Piece {
 		}
 	case "pawn":
 		p = &Piece{
-			name:   n,
+			kind:   n,
 			curPos: pos,
 			symbol: "♙",
 			isPawn: true,
