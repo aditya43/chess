@@ -96,7 +96,8 @@ func CreatePiece(pos int, n string) *Piece {
 		}
 	}
 
-	//TODO: Set boundries for a piece if it can move on X, Y axis as well as diagonally
+	//Set boundries for a piece if it can move on X, Y axis as well as diagonally
+	p.setBoundries()
 
 	return p
 }
