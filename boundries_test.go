@@ -97,3 +97,15 @@ func TestBottomBoundryIsSetForPieceIfItCanMoveOnYAxis(t *testing.T) {
 
 	p = nil
 }
+
+// Test if a correct top boundry is set for a piece
+func TestCorrectTopBoundryIsSetForPiece(t *testing.T) {
+	p = CreatePiece(20, "rook")
+	p.setTopBoundry()
+
+	if p.yBoundry.top != 24 {
+		t.Fatalf("Failed to test if a correct top boundry is set for a piece. Expected: %v. Got: %v", 20, p.yBoundry.top)
+	}
+
+	p = nil
+}

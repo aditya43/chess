@@ -91,7 +91,7 @@ func printInfo() {
 	print("\033[H\033[2J") // Ansi escape sequence to clear the screen
 	fmt.Println("Enter a piece type and it's position")
 	fmt.Println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-	color.New(color.FgGreen, color.BgBlack, color.OpBold).Println("👍 Program is not case-sensitive.")
+	color.New(color.FgGreen, color.BgBlack, color.OpBold).Println("👍 Program input is case-insensitive.")
 	color.New(color.FgGreen, color.BgBlack, color.OpBold).Print("👍 Type ")
 	color.BgRed.Print("exit")
 	color.New(color.FgGreen, color.BgBlack, color.OpBold).Println(" to quit program.")

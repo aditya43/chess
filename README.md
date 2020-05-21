@@ -84,6 +84,9 @@ WIP (Work In Progress)!
         maxY            int             // Max number of cells a piece can traverse in Y direction
         maxCross        int             // Max number of cells a piece can traverse in diagonal direction
         availPos        map[int]bool    // Available move positions for a piece
+        xBoundry        XBoundry        // Horizontal boundries
+        yBoundry        YBoundry        // Vertical boundries
+        diagonalBoundry DiagonalBoundry // Diagonal boundries
     }
     ```
 - Pieces:
