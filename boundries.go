@@ -22,7 +22,23 @@ type DiagonalBoundry struct {
 
 // Calculate left boundry based off current position of a piece
 func (p *Piece) setLeftBoundry() {
-	//
+	pos := p.curPos
+
+	for i := 0; i < 8; i++ {
+		if pos < 1 {
+			return
+		}
+
+		if pos >= 1 {
+			switch pos {
+			case 1, 2, 3, 4, 5, 6, 7, 8: // Left boundry numeric positions on board
+				p.xBoundry.left = pos
+				return
+			default:
+				pos -= 8
+			}
+		}
+	}
 }
 
 // Calculate right boundry based off current position of a piece
@@ -60,7 +76,8 @@ func (p *Piece) setBottomLeftBoundry() {
 	//
 }
 
-// Set boundries for a piece
+// Set boundries for a piece if it can move on X,
+// Y axis as well as in diagonal direction
 func (p *Piece) setBoundries() {
 	if p.xAllow {
 		p.setLeftBoundry()
