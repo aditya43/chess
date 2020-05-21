@@ -217,3 +217,15 @@ func TestTopRightBoundryIsNotSetForPieceIfItCannotMoveInDiagonalDirection(t *tes
 
 	p = nil
 }
+
+// Test if a bottom-left boundry is set for a piece if it is allowed to move in diagonal direction
+func TestBottomLeftBoundryIsSetForPieceIfItCanMoveInDiagonalDirection(t *testing.T) {
+	p = CreatePiece(20, "bishop")
+	p.setBoundries()
+
+	if p.diagonalBoundry.bottomLeft == 0 {
+		t.Fatal("Failed to test if a bottom-left boundry is set for a piece if it is allowed to move in diagonal direction ")
+	}
+
+	p = nil
+}
