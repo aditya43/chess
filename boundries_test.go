@@ -39,3 +39,15 @@ func TestCorrectLeftBoundryIsSetForPiece(t *testing.T) {
 
 	p = nil
 }
+
+// Test if a correct right boundry is set for a piece
+func TestCorrectRightBoundryIsSetForPiece(t *testing.T) {
+	p = CreatePiece(20, "rook")
+	p.setRightBoundry()
+
+	if p.xBoundry.right != 60 {
+		t.Fatalf("Failed to test if a correct right boundry is set for a piece. Expected: %v. Got: %v", 60, p.xBoundry.right)
+	}
+
+	p = nil
+}
