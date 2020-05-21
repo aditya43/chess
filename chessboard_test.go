@@ -37,3 +37,10 @@ func TestCreateChessBoardReturnsPointerToChessboardType(t *testing.T) {
 		t.Error("Failed to create Chessboard!")
 	}
 }
+
+// Benchmark test for CreateChessBoard() func
+func BenchmarkCreateChessBoard(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		CreateChessBoard()
+	}
+}
