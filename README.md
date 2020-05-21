@@ -104,9 +104,62 @@ horizontal step)
         - Can move only 1 step at a time, in the forward direction, vertically.
 Can also move 1 step forward diagonally, in order to eliminate an opposing
 piece.
-        - **Since there is only 1 side (as in Black/White), diagonal traversal functionality will be ommitted.**
+        - **Since there is only 1 side (as in Black/White), diagonal traversal functionality for a pawn piece will be ommitted.**
     * Bishop
         - Can move across the board only diagonally
+- Skeleton for adding move positions for various types of pieces:
+    ```go
+    // Calculate and add available positions for a piece based off it's current position
+    func (p *Piece) updateMovePositions(b *ChessBoard) {
+        p.availPos = make(map[int]bool)
+
+        if !p.isHorse {
+            if p.yAllow { // Check if a piece can move on y axis
+                if p.isPawn {
+                    // Y axis
+                    // Get positions in top direction for a pawn piece
+                }
+
+                if !p.isPawn {
+                    // Y axis
+                    // Get positions in top direction for a non pawn piece
+
+                    // Y axis
+                    // Get positions in bottom direction for a non pawn piece
+
+                }
+            }
+
+            // Check if a piece can move on x axis
+            if p.xAllow {
+                // X axis
+                // Get positions in right direction for a non pawn piece
+
+                // X axis
+                // Get positions in left direction for a non pawn piece
+            }
+
+            // Check if a piece can move in diagonal direction
+            if p.crossAllow {
+                // Diagonal
+                // Get diagonal move positions in top-right direction for a non pawn piece
+
+                // Diagonal
+                // Get diagonal move positions in top-left direction for a non pawn piece
+
+                // Diagonal
+                // Get diagonal move positions in bottom-right direction for a non pawn piece
+
+                // Diagonal
+                // Get diagonal move positions in bottom-left direction for a non pawn piece
+            }
+        }
+
+        if p.isHorse {
+            // Add move positions for a horse piece
+        }
+    }
+    ```
 
 ------
 
