@@ -58,7 +58,7 @@ func TestLeftBoundryIsNotSetForPieceIfItCannotMoveOnXAxis(t *testing.T) {
 	p.setBoundries()
 
 	if p.xBoundry.left != 0 {
-		t.Fatal("Failed if a left boundry is not set for a piece if it is not allowed to move on X axis")
+		t.Fatal("Failed to test if a left boundry is not set for a piece if it is not allowed to move on X axis")
 	}
 }
 
@@ -68,7 +68,19 @@ func TestRightBoundryIsNotSetForPieceIfItCannotMoveOnXAxis(t *testing.T) {
 	p.setBoundries()
 
 	if p.xBoundry.right != 0 {
-		t.Fatal("Failed if a right boundry is not set for a piece if it is not allowed to move on X axis")
+		t.Fatal("Failed to test if a right boundry is not set for a piece if it is not allowed to move on X axis")
+	}
+
+	p = nil
+}
+
+// Test if a top boundry is set for a piece if it is allowed to move on Y axis
+func TestTopBoundryIsSetForPieceIfItCanMoveOnYAxis(t *testing.T) {
+	p = CreatePiece(20, "rook")
+	p.setBoundries()
+
+	if p.yBoundry.top == 0 {
+		t.Fatal("Failed to test if a top boundry is set for a piece if it is allowed to move on Y axis ")
 	}
 
 	p = nil
