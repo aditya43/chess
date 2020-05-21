@@ -10,10 +10,13 @@ import (
 	"github.com/gookit/color" // For printing colorful text in terminal
 )
 
+var cb *ChessBoard
+var p *Piece
 var cr *bufio.Reader
 
+// Create chessboard
 func init() {
-	// Create chessboard
+	cb = CreateChessBoard()
 }
 
 // Execute program
