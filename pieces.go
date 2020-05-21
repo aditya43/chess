@@ -46,9 +46,11 @@ func (p *Piece) updateMovePositions(b *ChessBoard) {
 		if p.xAllow {
 			// X axis
 			// Get positions in right direction for a non pawn piece
+			p.addPositions(b, p.xBoundry.right, p.maxX, Positive, 8)
 
 			// X axis
 			// Get positions in left direction for a non pawn piece
+			p.addPositions(b, p.xBoundry.left, p.maxX, Negative, 8)
 		}
 
 		// Check if a piece can move in diagonal direction
