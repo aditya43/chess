@@ -34,12 +34,22 @@ WIP (Work In Progress)!
     + TestForCorrectUserInput
     + TestForCaseInsensitiveUserInput
     + BenchmarkUserInputValidator
+
+    // Chessboard | chessboard_test.go
+    + TestChessBoardHas64Cells
+    + TestStrCellsInChessBoardRepresentsCorrectNumericPositionOnChessBoard
+    + TestCreateChessBoardReturnsPointerToChessboardType
+    + TestPlacePieceFuncPlacesPieceOnAChessBoard
+    + TestPlacePieceFuncUpdatesAvailableMovePositionsForPiece
     ```
 
 - **Benchmark Tests**
     ```diff
     // User Input Validator | user_input_test.go
     - BenchmarkUserInputValidator
+
+    // Create Chessboard | chessboard_test.go
+    - BenchmarkCreateChessBoard
     ```
 
 ------
