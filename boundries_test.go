@@ -61,3 +61,15 @@ func TestLeftBoundryIsNotSetForPieceIfItCannotMoveOnXAxis(t *testing.T) {
 		t.Fatal("Failed if a left boundry is not set for a piece if it is not allowed to move on X axis")
 	}
 }
+
+// Test if a right boundry is not set for a piece if it is not allowed to move on X axis
+func TestRightBoundryIsNotSetForPieceIfItCannotMoveOnXAxis(t *testing.T) {
+	p = CreatePiece(20, "pawn")
+	p.setBoundries()
+
+	if p.xBoundry.right != 0 {
+		t.Fatal("Failed if a right boundry is not set for a piece if it is not allowed to move on X axis")
+	}
+
+	p = nil
+}
