@@ -1,6 +1,7 @@
 package main
 
 import (
+	"reflect"
 	"testing"
 )
 
@@ -25,5 +26,14 @@ func TestStrCellsInChessBoardRepresentsCorrectNumericPositionOnChessBoard(t *tes
 		if cb.strCells[i] != v {
 			t.Fatalf("Failed to Test if strCells in chessboard represents correct numeric position on chessboard. For cell %v, it represents %v numeric position. Expected output: %v ---> %v", cb.strCells[i], v, i, v)
 		}
+	}
+}
+
+// Test if a CreateChessboard() func returns pointer to the Chessboard type
+func TestCreateChessBoardReturnsPointerToChessboardType(t *testing.T) {
+	str := reflect.TypeOf(cb).String()
+
+	if str != "*main.ChessBoard" {
+		t.Error("Failed to create Chessboard!")
 	}
 }
