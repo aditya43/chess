@@ -7,7 +7,7 @@ const (
 	Negative
 )
 
-// Calculate and add available move positions for a piece
+// Calculate and add available move positions for any piece except horse
 //
 // b 	ChessBoard
 // l 	Limit

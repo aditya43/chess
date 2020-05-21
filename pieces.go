@@ -27,14 +27,17 @@ func (p *Piece) updateMovePositions(b *ChessBoard) {
 			if p.isPawn {
 				// Y axis
 				// Get positions in top direction for a pawn piece
+				p.addPositions(b, p.yBoundry.top, p.maxY, Positive, 1)
 			}
 
 			if !p.isPawn {
 				// Y axis
 				// Get positions in top direction for a non pawn piece
+				p.addPositions(b, p.yBoundry.top, p.maxY, Positive, 1)
 
 				// Y axis
 				// Get positions in bottom direction for a non pawn piece
+				p.addPositions(b, p.yBoundry.bottom, p.maxY, Negative, 1)
 
 			}
 		}
