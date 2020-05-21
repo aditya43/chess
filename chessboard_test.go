@@ -38,6 +38,16 @@ func TestCreateChessBoardReturnsPointerToChessboardType(t *testing.T) {
 	}
 }
 
+// Test if a placePiece() func places piece on a chessboard
+func TestPlacePieceFuncPlacesPieceOnAChessBoard(t *testing.T) {
+	// TODO
+}
+
+// Test if a placePiece() func adds/updates available move positions for a piece
+func TestPlacePieceFuncUpdatesAvailableMovePositionsForPiece(t *testing.T) {
+	// TODO
+}
+
 // Benchmark test for CreateChessBoard() func
 func BenchmarkCreateChessBoard(b *testing.B) {
 	for i := 0; i < b.N; i++ {
