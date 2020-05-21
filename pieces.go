@@ -57,15 +57,19 @@ func (p *Piece) updateMovePositions(b *ChessBoard) {
 		if p.crossAllow {
 			// Diagonal
 			// Get diagonal move positions in top-right direction for a non pawn piece
+			p.addPositions(b, p.diagonalBoundry.topRight, p.maxCross, Positive, 9)
 
 			// Diagonal
 			// Get diagonal move positions in top-left direction for a non pawn piece
+			p.addPositions(b, p.diagonalBoundry.topLeft, p.maxCross, Negative, 7)
 
 			// Diagonal
 			// Get diagonal move positions in bottom-right direction for a non pawn piece
+			p.addPositions(b, p.diagonalBoundry.bottomRight, p.maxCross, Positive, 7)
 
 			// Diagonal
 			// Get diagonal move positions in bottom-left direction for a non pawn piece
+			p.addPositions(b, p.diagonalBoundry.bottomLeft, p.maxCross, Negative, 9)
 		}
 	}
 
