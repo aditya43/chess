@@ -36,7 +36,10 @@ func CreateChessBoard() *ChessBoard {
 // pos 	numeric position on board
 // p 	Piece
 func (b *ChessBoard) placePiece(pos int, p *Piece) {
-	//
+	b.pieces = make(map[int]*Piece)
+	b.pieces[pos] = p
+
+	// TODO: Update move positions for a piece
 }
 
 // Render chessboard with a piece
