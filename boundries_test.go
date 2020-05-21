@@ -109,3 +109,15 @@ func TestCorrectTopBoundryIsSetForPiece(t *testing.T) {
 
 	p = nil
 }
+
+// Test if a correct bottom boundry is set for a piece
+func TestCorrectBottomBoundryIsSetForPiece(t *testing.T) {
+	p = CreatePiece(20, "rook")
+	p.setBottomBoundry()
+
+	if p.yBoundry.bottom != 17 {
+		t.Fatalf("Failed to test if a correct bottom boundry is set for a piece. Expected: %v. Got: %v", 60, p.yBoundry.bottom)
+	}
+
+	p = nil
+}
