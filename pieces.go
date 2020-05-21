@@ -74,7 +74,7 @@ func (p *Piece) updateMovePositions(b *ChessBoard) {
 	}
 
 	if p.isHorse {
-		// Add move positions for a horse piece
+		p.addHorsePositions(b) // Add move positions for a horse piece
 	}
 }
 
