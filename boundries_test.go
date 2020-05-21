@@ -169,3 +169,15 @@ func TestTopRightBoundryIsSetForPieceIfItCanMoveInDiagonalDirection(t *testing.T
 
 	p = nil
 }
+
+// Test if a correct top-left boundry is set for a piece
+func TestCorrectTopLeftBoundryIsSetForPiece(t *testing.T) {
+	p = CreatePiece(20, "bishop")
+	p.setTopLeftBoundry()
+
+	if p.diagonalBoundry.topLeft != 6 {
+		t.Fatalf("Failed to test if a correct top-left boundry is set for a piece. Expected: %v. Got: %v", 20, p.diagonalBoundry.topLeft)
+	}
+
+	p = nil
+}
