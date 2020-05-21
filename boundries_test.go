@@ -289,3 +289,43 @@ func TestBottomRightBoundryIsNotSetForPieceIfItCannotMoveInDiagonalDirection(t *
 
 	p = nil
 }
+
+// Test if correct boundries are set for queen
+func TestCorrectBoundriesAreSetForQueen(t *testing.T) {
+	p = CreatePiece(29, "queen")
+	p.setBoundries()
+
+	if p.xBoundry.left != 5 {
+		t.Fatalf("Failed to test if correct left boundry are set for queen. Expected: %v, Got: %v", 5, p.xBoundry.left)
+	}
+
+	if p.xBoundry.right != 61 {
+		t.Fatalf("Failed to test if correct right boundry are set for queen. Expected: %v, Got: %v", 5, p.xBoundry.right)
+	}
+
+	if p.yBoundry.top != 32 {
+		t.Fatalf("Failed to test if correct top boundry are set for queen. Expected: %v, Got: %v", 32, p.yBoundry.top)
+	}
+
+	if p.yBoundry.bottom != 25 {
+		t.Fatalf("Failed to test if correct bottom boundry are set for queen. Expected: %v, Got: %v", 25, p.yBoundry.bottom)
+	}
+
+	if p.diagonalBoundry.topLeft != 8 {
+		t.Fatalf("Failed to test if correct topLeft boundry are set for queen. Expected: %v, Got: %v", 8, p.diagonalBoundry.topLeft)
+	}
+
+	if p.diagonalBoundry.topRight != 56 {
+		t.Fatalf("Failed to test if correct topRight boundry are set for queen. Expected: %v, Got: %v", 56, p.diagonalBoundry.topRight)
+	}
+
+	if p.diagonalBoundry.bottomLeft != 2 {
+		t.Fatalf("Failed to test if correct bottomLeft boundry are set for queen. Expected: %v, Got: %v", 2, p.diagonalBoundry.bottomLeft)
+	}
+
+	if p.diagonalBoundry.bottomRight != 57 {
+		t.Fatalf("Failed to test if correct bottomRight boundry are set for queen. Expected: %v, Got: %v", 57, p.diagonalBoundry.bottomRight)
+	}
+
+	p = nil
+}
