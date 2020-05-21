@@ -61,3 +61,17 @@ func (p *Piece) addHorsePositions(b *ChessBoard) {
 	// 2 top, 1 right move
 
 }
+
+// Can a piece move 2 left, 1 top
+// p 	current position of a piece
+func canMakeTwoLeftOneTop(p int) bool {
+	if p <= 16 {
+		return false
+	}
+
+	switch p {
+	case 24, 32, 40, 48, 56, 64:
+		return false
+	}
+	return true
+}
