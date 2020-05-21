@@ -145,3 +145,17 @@ func canMakeTwoRightOneDown(p int) bool {
 	}
 	return true
 }
+
+// Can a piece move 2 right, 1 top
+// p 	current position of a piece
+func canMakeTwoRightOneTop(p int) bool {
+	if p >= 49 {
+		return false
+	}
+
+	switch p {
+	case 8, 16, 24, 32, 40, 48, 56, 64:
+		return false
+	}
+	return true
+}
