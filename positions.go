@@ -75,3 +75,17 @@ func canMakeTwoLeftOneTop(p int) bool {
 	}
 	return true
 }
+
+// Can a piece move 2 left, 1 down
+// p 	current position of a piece
+func canMakeTwoLeftOneDown(p int) bool {
+	if p <= 17 {
+		return false
+	}
+
+	switch p {
+	case 25, 33, 41, 49, 57:
+		return false
+	}
+	return true
+}
