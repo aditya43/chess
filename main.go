@@ -121,6 +121,15 @@ func restartProgram() {
 	checkExit(s) // Use can quit program by typing 'exit'
 }
 
+// Print available move positions for a piece on chaseboard
 func printOutput() {
-	// Print available move positions and a chaseboard
+	m := ""
+	color.Yellow.Print("Available Moves: ")
+
+	for pos := range p.availPos {
+		m += strings.ToUpper(cb.cells[pos]) + ", "
+	}
+	color.New(color.FgGreen, color.BgBlack, color.OpBold).Printf("%v\n\n\n", strings.TrimSuffix(m, ", "))
+	cb.print(p)
+	fmt.Print("\n")
 }
