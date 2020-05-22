@@ -94,8 +94,8 @@ func BenchmarkCreateChessBoard(b *testing.B) {
 	}
 }
 
-// Benchmark test for generating move positions for a piece
-func BenchmarkGenerateMovePositionsForPiece(b *testing.B) {
+// Benchmark test for moving a piece on chessboard
+func BenchmarkMovePieceOnChessBoard(b *testing.B) {
 	cb := chess.CreateChessBoard()
 	p := chess.CreatePiece(29, "pawn")
 	b.ResetTimer()
@@ -110,5 +110,15 @@ func BenchmarkCreateChessBoardAndPiece(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		_ = chess.CreateChessBoard()
 		_ = chess.CreatePiece(29, "pawn")
+	}
+}
+
+// Benchmark create chessboard, create piece and
+// then move piece on a created chessboard
+func BenchmarkCreateChessBoardAndPieceMoveItOnChessBoard(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		b := chess.CreateChessBoard()
+		p := chess.CreatePiece(29, "pawn")
+		b.PlacePiece(24, p)
 	}
 }
