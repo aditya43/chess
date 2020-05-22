@@ -104,6 +104,23 @@ WIP (Work In Progress)!
     - BenchmarkCreateChessBoardAndPieceMoveItOnChessBoard
     ```
 
+- **Benchmark Test Results**
+    ```
+    goos: darwin
+    goarch: amd64
+    pkg: github.com/aditya43/chess
+    BenchmarkUserInputValidator
+    BenchmarkUserInputValidator-8                           	30921040	        36.6 ns/op	       0 B/op	       0 allocs/op
+    BenchmarkCreateChessBoard
+    BenchmarkCreateChessBoard-8                             	   49857	     22715 ns/op	   18126 B/op	     212 allocs/op
+    BenchmarkMovePieceOnChessBoard
+    BenchmarkMovePieceOnChessBoard-8                        	 5746688	       200 ns/op	     336 B/op	       4 allocs/op
+    BenchmarkCreateChessBoardAndPiece
+    BenchmarkCreateChessBoardAndPiece-8                     	   50523	     22996 ns/op	   18270 B/op	     213 allocs/op
+    BenchmarkCreateChessBoardAndPieceMoveItOnChessBoard
+    BenchmarkCreateChessBoardAndPieceMoveItOnChessBoard-8   	   50686	     23099 ns/op	   18607 B/op	     217 allocs/op
+    ```
+
 ------
 
 ## Implementation Flow (Developer Notes)
