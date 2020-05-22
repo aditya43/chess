@@ -25,7 +25,7 @@ func (p *Piece) setLeftBoundry() {
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
-		if pos < 1 {
+		if pos <= 1 {
 			return
 		}
 
