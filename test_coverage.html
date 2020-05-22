@@ -60,7 +60,7 @@
 				
 				<option value="file2">github.com/aditya43/chess/engine/pieces.go (100.0%)</option>
 				
-				<option value="file3">github.com/aditya43/chess/engine/positions.go (76.8%)</option>
+				<option value="file3">github.com/aditya43/chess/engine/positions.go (100.0%)</option>
 				
 				<option value="file4">github.com/aditya43/chess/main.go (23.7%)</option>
 				
@@ -670,12 +670,12 @@ func (p *Piece) addHorsePositions(b *ChessBoard) <span class="cov8" title="1">{
 // Can a piece move 2 left, 1 top
 // p         current position of a piece
 func canMakeTwoLeftOneTop(p int) bool <span class="cov8" title="1">{
-        if p &lt;= 16 </span><span class="cov0" title="0">{
+        if p &lt;= 16 </span><span class="cov8" title="1">{
                 return false
         }</span>
 
         <span class="cov8" title="1">switch p </span>{
-        case 24, 32, 40, 48, 56, 64:<span class="cov0" title="0">
+        case 24, 32, 40, 48, 56, 64:<span class="cov8" title="1">
                 return false</span>
         }
         <span class="cov8" title="1">return true</span>
@@ -684,12 +684,12 @@ func canMakeTwoLeftOneTop(p int) bool <span class="cov8" title="1">{
 // Can a piece move 2 left, 1 down
 // p         current position of a piece
 func canMakeTwoLeftOneDown(p int) bool <span class="cov8" title="1">{
-        if p &lt;= 17 </span><span class="cov0" title="0">{
+        if p &lt;= 17 </span><span class="cov8" title="1">{
                 return false
         }</span>
 
         <span class="cov8" title="1">switch p </span>{
-        case 25, 33, 41, 49, 57:<span class="cov0" title="0">
+        case 25, 33, 41, 49, 57:<span class="cov8" title="1">
                 return false</span>
         }
         <span class="cov8" title="1">return true</span>
@@ -698,12 +698,12 @@ func canMakeTwoLeftOneDown(p int) bool <span class="cov8" title="1">{
 // Can a piece move 2 down, 1 right
 // p         current position of a piece
 func canMakeTwoDownOneRight(p int) bool <span class="cov8" title="1">{
-        if p &gt;= 57 </span><span class="cov0" title="0">{
+        if p &gt;= 57 </span><span class="cov8" title="1">{
                 return false
         }</span>
 
         <span class="cov8" title="1">switch p </span>{
-        case 1, 2, 10, 18, 26, 34, 42, 50, 58, 9, 17, 25, 33, 41, 49:<span class="cov0" title="0">
+        case 1, 2, 10, 18, 26, 34, 42, 50, 58, 9, 17, 25, 33, 41, 49:<span class="cov8" title="1">
                 return false</span>
         }
         <span class="cov8" title="1">return true</span>
@@ -712,12 +712,12 @@ func canMakeTwoDownOneRight(p int) bool <span class="cov8" title="1">{
 // Can a piece move 2 top, 1 left
 // p         current position of a piece
 func canMakeTwoTopOneLeft(p int) bool <span class="cov8" title="1">{
-        if p &lt;= 8 </span><span class="cov0" title="0">{
+        if p &lt;= 8 </span><span class="cov8" title="1">{
                 return false
         }</span>
 
         <span class="cov8" title="1">switch p </span>{
-        case 16, 24, 32, 40, 48, 56, 64, 15, 23, 31, 39, 47, 55, 63:<span class="cov0" title="0">
+        case 16, 24, 32, 40, 48, 56, 64, 15, 23, 31, 39, 47, 55, 63:<span class="cov8" title="1">
                 return false</span>
         }
         <span class="cov8" title="1">return true</span>
@@ -726,12 +726,12 @@ func canMakeTwoTopOneLeft(p int) bool <span class="cov8" title="1">{
 // Can a piece move 2 down, 1 left
 // p         current position of a piece
 func canMakeTwoDownOneLeft(p int) bool <span class="cov8" title="1">{
-        if p &lt;= 10 </span><span class="cov0" title="0">{
+        if p &lt;= 10 </span><span class="cov8" title="1">{
                 return false
         }</span>
 
         <span class="cov8" title="1">switch p </span>{
-        case 10, 18, 26, 34, 42, 50, 58, 9, 17, 25, 33, 41, 49, 57:<span class="cov0" title="0">
+        case 10, 18, 26, 34, 42, 50, 58, 9, 17, 25, 33, 41, 49, 57:<span class="cov8" title="1">
                 return false</span>
         }
         <span class="cov8" title="1">return true</span>
@@ -740,12 +740,12 @@ func canMakeTwoDownOneLeft(p int) bool <span class="cov8" title="1">{
 // Can a piece move 2 right, 1 down
 // p         current position of a piece
 func canMakeTwoRightOneDown(p int) bool <span class="cov8" title="1">{
-        if p &gt;= 49 </span><span class="cov0" title="0">{
+        if p &gt;= 49 </span><span class="cov8" title="1">{
                 return false
         }</span>
 
         <span class="cov8" title="1">switch p </span>{
-        case 1, 9, 17, 25, 33, 41:<span class="cov0" title="0">
+        case 1, 9, 17, 25, 33, 41:<span class="cov8" title="1">
                 return false</span>
         }
         <span class="cov8" title="1">return true</span>
@@ -754,12 +754,12 @@ func canMakeTwoRightOneDown(p int) bool <span class="cov8" title="1">{
 // Can a piece move 2 right, 1 top
 // p         current position of a piece
 func canMakeTwoRightOneTop(p int) bool <span class="cov8" title="1">{
-        if p &gt;= 49 </span><span class="cov0" title="0">{
+        if p &gt;= 49 </span><span class="cov8" title="1">{
                 return false
         }</span>
 
         <span class="cov8" title="1">switch p </span>{
-        case 8, 16, 24, 32, 40, 48, 56, 64:<span class="cov0" title="0">
+        case 8, 16, 24, 32, 40, 48, 56, 64:<span class="cov8" title="1">
                 return false</span>
         }
         <span class="cov8" title="1">return true</span>
@@ -768,12 +768,12 @@ func canMakeTwoRightOneTop(p int) bool <span class="cov8" title="1">{
 // Can a piece move 2 top, 1 right
 // p         current position of a piece
 func canMakeTwoTopOneRight(p int) bool <span class="cov8" title="1">{
-        if p &gt;= 57 </span><span class="cov0" title="0">{
+        if p &gt;= 57 </span><span class="cov8" title="1">{
                 return false
         }</span>
 
         <span class="cov8" title="1">switch p </span>{
-        case 7, 15, 23, 31, 39, 47, 55, 63, 8, 16, 24, 32, 40, 48, 56, 64:<span class="cov0" title="0">
+        case 7, 15, 23, 31, 39, 47, 55, 63, 8, 16, 24, 32, 40, 48, 56, 64:<span class="cov8" title="1">
                 return false</span>
         }
         <span class="cov8" title="1">return true</span>
