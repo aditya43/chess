@@ -332,10 +332,10 @@ func TestCorrectBoundriesAreSetForQueen(t *testing.T) {
 
 // Test if a piece is not allowed to move bottom-left if it is at bottom-left corner
 func TestPieceShouldNotMoveBottomLeftIfItIsAtBottomLeftCorner(t *testing.T) {
-	p := CreatePiece(1, "pawn")
+	p := CreatePiece(1, "queen")
 	p.setBoundries()
 
-	if p.diagonalBoundry.bottomLeft != 0 {
+	if p.diagonalBoundry.bottomLeft > 1 {
 		t.Fatal("Piece is at bottom-left corner, it shouldn't be able to move bottom-left")
 	}
 
@@ -344,10 +344,10 @@ func TestPieceShouldNotMoveBottomLeftIfItIsAtBottomLeftCorner(t *testing.T) {
 
 // Test if a piece is not allowed to move further bottom-right if it is at bottom-right corner
 func TestPieceShouldNotMoveBottomRightIfItIsAtBottomRightCorner(t *testing.T) {
-	p := CreatePiece(51, "pawn")
+	p := CreatePiece(57, "bishop")
 	p.setBoundries()
 
-	if p.diagonalBoundry.bottomRight != 0 {
+	if p.diagonalBoundry.bottomRight > 57 {
 		t.Fatal("Piece is at bottom-left corner, it shouldn't be able to move bottom-right")
 	}
 
@@ -356,10 +356,10 @@ func TestPieceShouldNotMoveBottomRightIfItIsAtBottomRightCorner(t *testing.T) {
 
 // Test if a piece is not allowed to move left if it is at bottom-left corner
 func TestPieceShouldNotMoveLeftIfItIsAtBottomLeftCorner(t *testing.T) {
-	p := CreatePiece(1, "pawn")
+	p := CreatePiece(1, "rook")
 	p.setBoundries()
 
-	if p.xBoundry.left != 0 {
+	if p.xBoundry.left > 1 {
 		t.Fatal("Piece is at bottom-left corner, it shouldn't be able to move further left")
 	}
 
@@ -368,10 +368,10 @@ func TestPieceShouldNotMoveLeftIfItIsAtBottomLeftCorner(t *testing.T) {
 
 // Test if a piece is not allowed to move right if it is at bottom-right corner
 func TestPieceShouldNotMoveRightIfItIsAtBottomRightCorner(t *testing.T) {
-	p := CreatePiece(1, "pawn")
+	p := CreatePiece(57, "rook")
 	p.setBoundries()
 
-	if p.xBoundry.right != 0 {
+	if p.xBoundry.right > 57 {
 		t.Fatal("Piece is at bottom-left corner, it shouldn't be able to move further right")
 	}
 
