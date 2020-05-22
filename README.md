@@ -16,11 +16,10 @@ WIP (Work In Progress)!
 ## APIs
 - **ChessBoard**
     * `CreateChessBoard()`: Create cells with their numeric identifiers and return a pointer to the `ChessBoard struct`.
-    * `placePiece()`: Place piece on a chessboard and update available move positions for a piece.
-    * `print()`: Render chessboard with a piece.
+    * `PlacePiece()`: Place piece on a chessboard and update available move positions for a piece.
+    * `Print()`: Render chessboard with a piece.
 - **Piece**
-    * `CreatePiece()`: Create a piece.
-    * `updatePositions()`: Calculate and add available move positions for a piece based off it's current position.
+    * `CreatePiece()`: Create a piece and add available move positions.
 
 ------
 
@@ -31,9 +30,9 @@ WIP (Work In Progress)!
     + TestForSingleWordInput
     + TestForInvalidPieceNameInput
     + TestForInvalidPositionInput
+    + TestForInvalidPieceTypeAndPositionInput
     + TestForCorrectUserInput
     + TestForCaseInsensitiveUserInput
-    + BenchmarkUserInputValidator
 
     // Chessboard | chessboard_test.go
     + TestChessBoardHas64Cells
@@ -41,15 +40,61 @@ WIP (Work In Progress)!
     + TestCreateChessBoardReturnsPointerToChessboardType
     + TestPlacePieceFuncPlacesPieceOnAChessBoard
     + TestPlacePieceFuncUpdatesAvailableMovePositionsForPiece
+
+    // Piece | pieces_test.go
+    + TestCreatePieceReturnsPointerToPieceType
+    + TestCreatePieceCreatesPiece
+    + TestUpdateMovePositionsUpdatesAvailableMovePositionsForPiece
+    + TestUpdateMovePositionsUpdateCorrectNumberOfMovePositionsForPiece
+    + TestUpdateMovePositionsGenerateCorrectMovePositionsForPiece
+    + TestMovePositionsAreGeneratedForDifferentTypesOfPieces
+
+    // Piece Boundries | boundries_test.go
+    + TestLeftBoundryIsSetForPieceIfItCanMoveOnXAxis
+    + TestRightBoundryIsSetForPieceIfItCanMoveOnXAxis
+    + TestCorrectLeftBoundryIsSetForPiece
+    + TestCorrectRightBoundryIsSetForPiece
+    + TestLeftBoundryIsNotSetForPieceIfItCannotMoveOnXAxis
+    + TestRightBoundryIsNotSetForPieceIfItCannotMoveOnXAxis
+    + TestTopBoundryIsSetForPieceIfItCanMoveOnYAxis
+    + TestBottomBoundryIsSetForPieceIfItCanMoveOnYAxis
+    + TestCorrectTopBoundryIsSetForPiece
+    + TestCorrectBottomBoundryIsSetForPiece
+    + TestTopBoundryIsNotSetForPieceIfItCannotMoveOnYAxis
+    + TestBottomBoundryIsNotSetForPieceIfItCannotMoveOnYAxis
+    + TestTopLeftBoundryIsSetForPieceIfItCanMoveInDiagonalDirection
+    + TestTopRightBoundryIsSetForPieceIfItCanMoveInDiagonalDirection
+    + TestCorrectTopLeftBoundryIsSetForPiece
+    + TestCorrectTopRightBoundryIsSetForPiece
+    + TestTopLeftBoundryIsNotSetForPieceIfItCannotMoveInDiagonalDirection
+    + TestTopRightBoundryIsNotSetForPieceIfItCannotMoveInDiagonalDirection
+    + TestBottomLeftBoundryIsSetForPieceIfItCanMoveInDiagonalDirection
+    + TestBottomRightBoundryIsSetForPieceIfItCanMoveInDiagonalDirection
+    + TestCorrectBottomLeftBoundryIsSetForPiece
+    + TestCorrectBottomRightBoundryIsSetForPiece
+    + TestBottomLeftBoundryIsNotSetForPieceIfItCannotMoveInDiagonalDirection
+    + TestBottomRightBoundryIsNotSetForPieceIfItCannotMoveInDiagonalDirection
+    + TestCorrectBoundriesAreSetForQueen
+
+    // Move Positions For Piece | positions_test.go
+    + TestCorrectMovePositionIsGeneratedForPawnTypePiece
+    + TestMovePositionsAreGeneratedInTopDirectionForNonPawnTypePiece
+    + TestMovePositionsAreGeneratedInBottomDirectionForNonPawnTypePiece
+    + TestMovePositionsAreGeneratedInLeftDirectionForNonPawnTypePiece
+    + TestMovePositionsAreGeneratedInRightDirectionForNonPawnTypePiece
+    + TestCorrectMovePositionsAreGeneratedForDifferentTypesOfPieces
     ```
 
 - **Benchmark Tests**
     ```diff
-    // User Input Validator | user_input_test.go
+    // User Input Validator
     - BenchmarkUserInputValidator
 
-    // Create Chessboard | chessboard_test.go
+    // Create Chessboard
     - BenchmarkCreateChessBoard
+
+    // Generate move positions for a piece
+    - BenchmarkGenerateMovePositionsForPiece
     ```
 
 ------

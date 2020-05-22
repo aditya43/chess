@@ -63,10 +63,3 @@ func TestPlacePieceFuncUpdatesAvailableMovePositionsForPiece(t *testing.T) {
 		t.Fatal("Failed to test if a placePiece() func adds/updates available move positions for a piece")
 	}
 }
-
-// Benchmark test for CreateChessBoard() func
-func BenchmarkCreateChessBoard(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		CreateChessBoard()
-	}
-}

@@ -2,6 +2,8 @@ package main
 
 import (
 	"testing"
+
+	"github.com/aditya43/chess/chess"
 )
 
 // Test if error is returned when user inputs a single word
@@ -82,5 +84,24 @@ func TestForCaseInsensitiveUserInput(t *testing.T) {
 func BenchmarkUserInputValidator(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		_ = validateInput([]string{"king", "a1"})
+	}
+}
+
+// Benchmark test for CreateChessBoard() func
+func BenchmarkCreateChessBoard(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = chess.CreateChessBoard()
+	}
+}
+
+// Benchmark test for generating move positions for a piece
+func BenchmarkGenerateMovePositionsForPiece(b *testing.B) {
+	cb := chess.CreateChessBoard()
+	p := chess.CreatePiece(29, "pawn")
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		cb.PlacePiece(1, p)
+		p = nil
 	}
 }
