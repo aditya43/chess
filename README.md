@@ -244,6 +244,17 @@ piece.
     go test ./... -coverprofile=test_coverage.txt
     go tool cover -html=test_coverage.txt -o test_coverage.html
     ```
+- To cross compile program:
+    ```sh
+    # macOS
+    GOOS="darwin" GOARCH="amd64" go build .
+
+    # Windows
+    GOOS="windows" GOARCH="386" go build .
+
+    # Linux
+    GOOS="linux" GOARCH="386" CGO_ENABLED=0 go build .
+    ```
 
 ------
 
