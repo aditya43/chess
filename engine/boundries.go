@@ -46,7 +46,7 @@ func (p *Piece) setRightBoundry() {
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
-		if pos > 64 {
+		if pos >= 64 {
 			return
 		}
 
