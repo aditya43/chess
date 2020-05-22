@@ -108,9 +108,16 @@ func TestCorrectMovePositionsAreGeneratedForDifferentTypesOfPieces(t *testing.T)
 	}
 }
 
-// Test if a horse can make 2 left, 1 top move
-func TestHorseMake2Left1TopMove(t *testing.T) {
+// Test if a horse is not allowed to make 2 left, 1 top move
+func TestHorseNotAllowedToMake2Left1TopMove(t *testing.T) {
 	if canMakeTwoLeftOneTop(15) {
 		t.Error("Horse shoudln't make make 2 left, 1 top move")
+	}
+}
+
+// Test if a horse is not allowed to make 2 left, 1 down
+func TestHorseNotAllowedToMake2Left1DownMove(t *testing.T) {
+	if canMakeTwoLeftOneDown(16) {
+		t.Error("Horse shoudln't make make 2 left, 1 down move")
 	}
 }
