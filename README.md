@@ -24,7 +24,7 @@ WIP (Work In Progress)!
 ------
 
 ## Tests
-- **Test Coverage Report (HTML):** [https://htmlpreview.github.io/?https://github.com/aditya43/chess/blob/master/test_coverage.html#file0](https://htmlpreview.github.io/?https://github.com/aditya43/chess/blob/master/test_coverage.html#file0)
+- **[Test Coverage Report (HTML) :rocket:](https://htmlpreview.github.io/?https://github.com/aditya43/chess/blob/master/test_coverage.html#file0)**
 - **Unit Tests**
     ```diff
     // User Input | user_input_test.go
