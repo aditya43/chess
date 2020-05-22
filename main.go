@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/aditya43/chess/chess"
+	game "github.com/aditya43/chess/engine"
 	"github.com/gookit/color" // For printing colorful text in terminal
 )
 
@@ -33,10 +33,10 @@ func takeAction(w []string, cr *bufio.Reader) {
 		return
 	}
 
-	cb := chess.CreateChessBoard()    // Create chessboard
-	pos := cb.StrCells[w[1]]          // Get numeric position for a cell
-	p := chess.CreatePiece(pos, w[0]) // Create a piece
-	cb.PlacePiece(pos, p)             // Place a piece on chessboard
+	cb := game.CreateChessBoard()    // Create chessboard
+	pos := cb.StrCells[w[1]]         // Get numeric position for a cell
+	p := game.CreatePiece(pos, w[0]) // Create a piece
+	cb.PlacePiece(pos, p)            // Place a piece on chessboard
 
 	printOutput(cb, p) // Print output
 	restartProgram(cr) // Restart program
@@ -121,7 +121,7 @@ func restartProgram(cr *bufio.Reader) {
 
 // Print available move positions and render
 // chessboard with a piece on it
-func printOutput(cb *chess.ChessBoard, p *chess.Piece) {
+func printOutput(cb *game.ChessBoard, p *game.Piece) {
 	m := ""
 	color.Yellow.Print("Available Moves: ")
 

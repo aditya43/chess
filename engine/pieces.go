@@ -1,4 +1,4 @@
-package chess
+package engine
 
 // Chessboard piece
 type Piece struct {

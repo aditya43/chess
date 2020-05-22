@@ -1,4 +1,4 @@
-package chess
+package engine
 
 type Direction int // Move direction of a piece
 

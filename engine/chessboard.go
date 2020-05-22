@@ -1,4 +1,4 @@
-package chess
+package engine
 
 import (
 	"fmt"

@@ -4,7 +4,7 @@ Simple program simulating movements of various types of pieces on the empty ches
 ------
 
 ## Current Status
-WIP (Work In Progress)!
+Done (Last Updated: 22 May 2020)
 
 ------
 

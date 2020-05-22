@@ -1,4 +1,4 @@
-package chess
+package engine
 
 // Boundries in horizontal direction for a piece
 type XBoundry struct {
