@@ -138,14 +138,28 @@ Simple program simulating movements of various types of pieces on the empty ches
     + TestBottomLeftBoundryIsNotSetForPieceIfItCannotMoveInDiagonalDirection
     + TestBottomRightBoundryIsNotSetForPieceIfItCannotMoveInDiagonalDirection
     + TestCorrectBoundriesAreSetForQueen
+    + TestPieceShouldNotMoveBottomLeftIfItIsAtBottomLeftCorner
+    + TestPieceShouldNotMoveBottomRightIfItIsAtBottomRightCorner
+    + TestPieceShouldNotMoveLeftIfItIsAtBottomLeftCorner
+    + TestPieceShouldNotMoveRightIfItIsAtTopRightCorner
+    + TestPieceShouldNotMoveRightIfItIsAtBottomRightCorner
 
     // Move Positions For Piece | positions_test.go
-    + TestCorrectMovePositionIsGeneratedForPawnTypePiece
+    + TestCorrectMovePositionsAreGeneratedForPawnTypePiece
     + TestMovePositionsAreGeneratedInTopDirectionForNonPawnTypePiece
     + TestMovePositionsAreGeneratedInBottomDirectionForNonPawnTypePiece
     + TestMovePositionsAreGeneratedInLeftDirectionForNonPawnTypePiece
     + TestMovePositionsAreGeneratedInRightDirectionForNonPawnTypePiece
     + TestCorrectMovePositionsAreGeneratedForDifferentTypesOfPieces
+    + TestMovePositionsForKing
+    + TestHorseNotAllowedToMake2Left1TopMove
+    + TestHorseNotAllowedToMake2Left1DownMove
+    + TestHorseNotAllowedToMake2Down1RightMove
+    + TestHorseNotAllowedToMake2Top1LeftMove
+    + TestHorseNotAllowedToMake2Down1LeftMove
+    + TestHorseNotAllowedToMake2Right1DownMove
+    + TestHorseNotAllowedToMake2Right1TopMove
+    + TestHorseNotAllowedToMake2Top1RightMove
     ```
 
 - **Benchmark Tests**

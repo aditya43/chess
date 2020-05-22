@@ -1,7 +1,6 @@
 package engine
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -115,8 +114,25 @@ func TestMovePositionsForKing(t *testing.T) {
 	p := CreatePiece(32, "king")
 	p.updateMovePositions(cb)
 
-	fmt.Println(p.AvailPos)
-	fmt.Println(p.xBoundry.right)
+	if !p.AvailPos[24] {
+		t.Errorf("Expected move position %v (%v) is not set for a king", 24, cb.Cells[24])
+	}
+
+	if !p.AvailPos[40] {
+		t.Errorf("Expected move position %v (%v) is not set for a king", 40, cb.Cells[40])
+	}
+
+	if !p.AvailPos[23] {
+		t.Errorf("Expected move position %v (%v) is not set for a king", 23, cb.Cells[23])
+	}
+
+	if !p.AvailPos[31] {
+		t.Errorf("Expected move position %v (%v) is not set for a king", 31, cb.Cells[31])
+	}
+
+	if !p.AvailPos[39] {
+		t.Errorf("Expected move position %v (%v) is not set for a king", 39, cb.Cells[39])
+	}
 }
 
 // Test if a horse is not allowed to make 2 left, 1 top move
