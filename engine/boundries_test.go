@@ -341,3 +341,15 @@ func TestPieceShouldNotMoveLeftIfItIsAtBottomLeftCorner(t *testing.T) {
 
 	p = nil
 }
+
+// Test if a piece is not allowed to move further right if it is at bottom-right corner
+func TestPieceShouldNotMoveRightIfItIsAtBottomRightCorner(t *testing.T) {
+	p := CreatePiece(51, "pawn")
+	p.setBoundries()
+
+	if p.diagonalBoundry.bottomRight != 0 {
+		t.Fatal("Piece is at bottom-left corner, it shouldn't be able to move further left")
+	}
+
+	p = nil
+}
