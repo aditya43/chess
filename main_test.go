@@ -102,6 +102,5 @@ func BenchmarkGenerateMovePositionsForPiece(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		cb.PlacePiece(1, p)
-		p = nil
 	}
 }
