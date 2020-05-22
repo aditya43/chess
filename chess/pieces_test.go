@@ -45,3 +45,18 @@ func TestUpdateMovePositionsUpdateCorrectNumberOfMovePositionsForPiece(t *testin
 		t.Error("Failed to test if a updateMovePositions() func updates correct number of available move positions for a piece")
 	}
 }
+
+// Test if the updateMovePositions() func generates correct move positions for a piece
+func TestUpdateMovePositionsGenerateCorrectMovePositionsForPiece(t *testing.T) {
+	cb := CreateChessBoard()
+	p := CreatePiece(29, "horse") // Create piece
+	p.updateMovePositions(cb)
+
+	correctMoves := [8]int{39, 46, 44, 35, 12, 19, 14, 23}
+
+	for _, v := range correctMoves {
+		if _, ok := p.AvailPos[v]; !ok {
+			t.Errorf("Failed to test if the updateMovePositions() func generates correct move positions for a piece. Found a missing move position for a piece: %v ---> %v", v, cb.Cells[v])
+		}
+	}
+}
