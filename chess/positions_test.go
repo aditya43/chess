@@ -107,3 +107,13 @@ func TestCorrectMovePositionsAreGeneratedForDifferentTypesOfPieces(t *testing.T)
 		}
 	}
 }
+
+// Benchmark test for correct move positions are generated for valid piece type and position type
+func BenchmarkForCorrectUserInputPieceIsCreatedWithCorrectMovePositions(b *testing.B) {
+	cb := CreateChessBoard()
+	for i := 0; i < b.N; i++ {
+		p := CreatePiece(29, "pawn")
+		p.updateMovePositions(cb)
+		p = nil
+	}
+}
