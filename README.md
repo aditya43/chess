@@ -6,44 +6,42 @@ Simple program simulating movements of various types of pieces on the empty ches
 ------
 
 ## How To Run?
-- Download executable program for your OS:
-    * macOS: [https://github.com/aditya43/chess/raw/master/executables/chess_mac](https://github.com/aditya43/chess/raw/master/executables/chess_mac)
-    * Linux: [https://github.com/aditya43/chess/raw/master/executables/chess_linux](https://github.com/aditya43/chess/raw/master/executables/chess_linux)
-    * Windows: [https://github.com/aditya43/chess/raw/master/executables/chess_windows.exe](https://github.com/aditya43/chess/raw/master/executables/chess_windows.exe)
-- Follow executation instructions for your OS:
-    * **macOS**:
-        - Open terminal. Press `Command + Spacebar` to open `Spotlight` and type `Terminal`.
-        - Go to downloaded executable's location in your terminal:
-            ```sh
-            # Replace "aditya" with your username
-            cd /home/aditya/Downloads
-            ```
-        - Execute following command to run the program:
-            ```sh
-            ./chess_mac
-            ```
-    * **Linux**:
-        - Open terminal (Press `CTRL + ALT + T`).
-        - Go to downloaded executable's location in your terminal:
-            ```sh
-            # Replace "aditya" with your username
-            cd /home/aditya/Downloads
-            ```
-        - Execute following command to run the program:
-            ```sh
-            ./chess_linux
-            ```
-    * **Windows**:
-        - For best experience, open `Git Bash`. If you don't have `Git Bash`, open `Command Prompt`.
-        - Go to downloaded executable's location in your terminal:
-            ```sh
-            # Replace "aditya.hajare" with your username
-            cd "C:\Users\aditya.hajare\Downloads"
-            ```
-        - Execute following command to run the program:
-            ```sh
-            ./chess_windows.exe
-            ```
+- **macOS**:
+    * Download executable program: [https://github.com/aditya43/chess/raw/master/executables/chess_mac](https://github.com/aditya43/chess/raw/master/executables/chess_mac)
+    * Open terminal. Press `Command + Spacebar` to open `Spotlight` and type `Terminal`.
+    * Go to downloaded executable's location in your terminal:
+        ```sh
+        # Replace "aditya" with your username
+        cd /home/aditya/Downloads
+        ```
+    * Execute following command to run the program:
+        ```sh
+        ./chess_mac
+        ```
+- **Linux**:
+    * Download executable program: [https://github.com/aditya43/chess/raw/master/executables/chess_linux](https://github.com/aditya43/chess/raw/master/executables/chess_linux)
+    * Open terminal (Press `CTRL + ALT + T`).
+    * Go to downloaded executable's location in your terminal:
+        ```sh
+        # Replace "aditya" with your username
+        cd /home/aditya/Downloads
+        ```
+    * Execute following command to run the program:
+        ```sh
+        ./chess_linux
+        ```
+- **Windows**:
+    * Download executable program: [https://github.com/aditya43/chess/raw/master/executables/chess_windows.exe](https://github.com/aditya43/chess/raw/master/executables/chess_windows.exe)
+    * For best experience, open `Git Bash`. If you don't have `Git Bash`, open `Command Prompt`.
+    * Go to downloaded executable's location in your terminal:
+        ```sh
+        # Replace "aditya.hajare" with your username
+        cd "C:\Users\aditya.hajare\Downloads"
+        ```
+    * Execute following command to run the program:
+        ```sh
+        ./chess_windows.exe
+        ```
 
 ------
 
