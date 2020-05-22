@@ -10,6 +10,8 @@ func TestCorrectMovePositionsAreGeneratedForPawnTypePiece(t *testing.T) {
 	p := CreatePiece(20, "pawn") // Create piece
 	p.AvailPos = make(map[int]bool)
 	p.addPositions(cb, p.yBoundry.top, p.maxY, Positive, 1)
+	p.addPositions(cb, p.diagonalBoundry.topRight, p.maxCross, Positive, 9)
+	p.addPositions(cb, p.diagonalBoundry.topLeft, p.maxCross, Negative, 7)
 
 	if !p.AvailPos[21] {
 		t.Error("Pawn doesn't have move position in upward direction!")
@@ -83,7 +85,7 @@ func TestCorrectMovePositionsAreGeneratedForDifferentTypesOfPieces(t *testing.T)
 		"bishop": {15, 36, 43, 20, 11, 22, 47, 56, 8, 50, 57, 2, 38},
 		"horse":  {35, 44, 46, 39, 14, 12, 23, 19},
 		"rook":   {21, 27, 5, 53, 13, 30, 31, 28, 45, 61, 32, 26, 25, 37},
-		"pawn":   {30},
+		"pawn":   {30, 22, 38},
 	}
 
 	for _, v := range kinds {
