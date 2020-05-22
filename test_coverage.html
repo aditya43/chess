@@ -54,13 +54,13 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">github.com/aditya43/chess/engine/boundries.go (89.0%)</option>
+				<option value="file0">github.com/aditya43/chess/engine/boundries.go (90.1%)</option>
 				
 				<option value="file1">github.com/aditya43/chess/engine/chessboard.go (42.9%)</option>
 				
 				<option value="file2">github.com/aditya43/chess/engine/pieces.go (100.0%)</option>
 				
-				<option value="file3">github.com/aditya43/chess/engine/positions.go (75.4%)</option>
+				<option value="file3">github.com/aditya43/chess/engine/positions.go (76.8%)</option>
 				
 				<option value="file4">github.com/aditya43/chess/main.go (23.7%)</option>
 				
@@ -201,7 +201,13 @@ func (p *Piece) setTopLeftBoundry() <span class="cov8" title="1">{
                                 p.diagonalBoundry.topLeft = pos
                                 return</span>
                         default:<span class="cov8" title="1">
-                                pos -= 7</span>
+                                if p.isPawn </span><span class="cov8" title="1">{
+                                        // Pawn is not on left boundry or top boundry
+                                        // Calculate and set its top-left position
+                                        p.diagonalBoundry.topLeft = pos - 7
+                                        return
+                                }</span>
+                                <span class="cov8" title="1">pos -= 7</span>
                         }
                 }
         }
@@ -225,7 +231,13 @@ func (p *Piece) setTopRightBoundry() <span class="cov8" title="1">{
                                 p.diagonalBoundry.topRight = pos
                                 return</span>
                         default:<span class="cov8" title="1">
-                                pos += 9</span>
+                                if p.isPawn </span><span class="cov8" title="1">{
+                                        // Pawn is not on right boundry or top boundry
+                                        // Calculate and set its top-right position
+                                        p.diagonalBoundry.topRight = pos + 9
+                                        return
+                                }</span>
+                                <span class="cov8" title="1">pos += 9</span>
                         }
                 }
         }
@@ -233,7 +245,11 @@ func (p *Piece) setTopRightBoundry() <span class="cov8" title="1">{
 
 // Calculate bottom-right boundry based off current position of a piece
 func (p *Piece) setBottomRightBoundry() <span class="cov8" title="1">{
-        pos := p.CurPos
+        if p.isPawn </span><span class="cov8" title="1">{
+                return
+        }</span>
+
+        <span class="cov8" title="1">pos := p.CurPos
 
         for i := 0; i &lt; 8; i++ </span><span class="cov8" title="1">{
                 if pos &lt; 9 </span><span class="cov0" title="0">{
@@ -257,7 +273,11 @@ func (p *Piece) setBottomRightBoundry() <span class="cov8" title="1">{
 
 // Calculate bottom-left boundry based off current position of a piece
 func (p *Piece) setBottomLeftBoundry() <span class="cov8" title="1">{
-        pos := p.CurPos
+        if p.isPawn </span><span class="cov8" title="1">{
+                return
+        }</span>
+
+        <span class="cov8" title="1">pos := p.CurPos
 
         for i := 0; i &lt; 8; i++ </span><span class="cov8" title="1">{
                 if pos &lt; 1 </span><span class="cov0" title="0">{
@@ -478,6 +498,7 @@ func (p *Piece) updateMovePositions(b *ChessBoard) <span class="cov8" title="1">
 }
 
 // Create piece
+//
 // pos: Numeric position of a piece on board
 // n: Piece type
 func CreatePiece(pos int, n string) *Piece <span class="cov8" title="1">{
@@ -541,12 +562,14 @@ func CreatePiece(pos int, n string) *Piece <span class="cov8" title="1">{
                 }</span>
         case "pawn":<span class="cov8" title="1">
                 p = &amp;Piece{
-                        Kind:   n,
-                        CurPos: pos,
-                        Symbol: "♙",
-                        isPawn: true,
-                        yAllow: true,
-                        maxY:   1,
+                        Kind:       n,
+                        CurPos:     pos,
+                        Symbol:     "♙",
+                        isPawn:     true,
+                        yAllow:     true,
+                        maxY:       1,
+                        crossAllow: true,
+                        maxCross:   1,
                 }</span>
         }
 
@@ -574,7 +597,7 @@ const (
 // d         Positive or Negative direction
 // f         Increment/Decrement factor
 func (p *Piece) addPositions(b *ChessBoard, l int, max int, d Direction, f int) <span class="cov8" title="1">{
-        if l &lt; 1 </span><span class="cov0" title="0">{
+        if l &lt; 1 </span><span class="cov8" title="1">{
                 return // Piece doesn't have any space to move in d Direction
         }</span>
 
