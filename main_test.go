@@ -31,6 +31,15 @@ func TestForInvalidPositionInput(t *testing.T) {
 	}
 }
 
+// Test if error is returned when user inputs invalid piece type and invalid position
+func TestForInvalidPieceTypeAndPositionInput(t *testing.T) {
+	err := validateInput([]string{"adi", "x1"})
+
+	if err == nil {
+		t.Fatalf("Failed to validate invalid position user input! Error: %v", err)
+	}
+}
+
 // Test if no error is returned for a correct input
 func TestForCorrectUserInput(t *testing.T) {
 	inputs := [5][]string{

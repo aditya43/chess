@@ -7,46 +7,39 @@ import (
 	"os"
 	"strings"
 
+	"github.com/aditya43/chess/chess"
 	"github.com/gookit/color" // For printing colorful text in terminal
 )
-
-var cb *ChessBoard
-var p *Piece
-var cr *bufio.Reader
-
-// Create chessboard
-func init() {
-	cb = CreateChessBoard()
-}
 
 // Execute program
 func main() {
 	for {
-		cr = bufio.NewReader(os.Stdin)
+		cr := bufio.NewReader(os.Stdin)
 		printInfo()
 		s, _ := cr.ReadString('\n')
 		w := strings.Fields(strings.ToLower(s))
 		checkExit(s)
-		takeAction(w)
+		takeAction(w, cr)
 	}
 }
 
 // Take action based off user input
-func takeAction(w []string) {
+func takeAction(w []string, cr *bufio.Reader) {
 	err := validateInput(w)
 
 	if err != nil {
 		color.Error.Println(err)
-		restartProgram()
+		restartProgram(cr)
 		return
 	}
 
-	pos := cb.strCells[w[1]] // Get numeric position for a cell
+	cb := chess.CreateChessBoard()    // Create chessboard
+	pos := cb.StrCells[w[1]]          // Get numeric position for a cell
+	p := chess.CreatePiece(pos, w[0]) // Create a piece
+	cb.PlacePiece(pos, p)             // Place a piece on chessboard
 
-	p = CreatePiece(pos, w[0]) // Create a piece
-	cb.placePiece(pos, p)      // Place a piece on chessboard
-	printOutput()
-	restartProgram()
+	printOutput(cb, p) // Print output
+	restartProgram(cr) // Restart program
 }
 
 // Validate user inputs
@@ -120,22 +113,23 @@ func checkExit(s string) {
 }
 
 // Ask user to hit Enter key to restart program
-func restartProgram() {
-	p = nil // Delete piece
+func restartProgram(cr *bufio.Reader) {
 	color.Yellow.Println("Hit Enter key to continue")
 	s, _ := cr.ReadString('\n')
 	checkExit(s) // User can quit program by typing 'exit'
 }
 
-// Print available move positions for a piece on chaseboard
-func printOutput() {
+// Print available move positions and render
+// chessboard with a piece on it
+func printOutput(cb *chess.ChessBoard, p *chess.Piece) {
 	m := ""
 	color.Yellow.Print("Available Moves: ")
 
-	for pos := range p.availPos {
-		m += strings.ToUpper(cb.cells[pos]) + ", "
+	for pos := range p.AvailPos {
+		m += strings.ToUpper(cb.Cells[pos]) + ", "
 	}
+
 	color.New(color.FgGreen, color.BgBlack, color.OpBold).Printf("%v\n\n\n", strings.TrimSuffix(m, ", "))
-	cb.print(p)
+	cb.Print(p)
 	fmt.Print("\n")
 }

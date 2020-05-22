@@ -1,4 +1,4 @@
-package main
+package chess
 
 // Boundries in horizontal direction for a piece
 type XBoundry struct {
@@ -22,7 +22,7 @@ type DiagonalBoundry struct {
 
 // Calculate left boundry based off current position of a piece
 func (p *Piece) setLeftBoundry() {
-	pos := p.curPos
+	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
 		if pos < 1 {
@@ -43,7 +43,7 @@ func (p *Piece) setLeftBoundry() {
 
 // Calculate right boundry based off current position of a piece
 func (p *Piece) setRightBoundry() {
-	pos := p.curPos
+	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
 		if pos > 64 {
@@ -64,7 +64,7 @@ func (p *Piece) setRightBoundry() {
 
 // Calculate top boundry based off current position of a piece
 func (p *Piece) setTopBoundry() {
-	pos := p.curPos
+	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
 		if pos > 64 {
@@ -85,7 +85,7 @@ func (p *Piece) setTopBoundry() {
 
 // Calculate bottom boundry based off current position of a piece
 func (p *Piece) setBottomBoundry() {
-	pos := p.curPos
+	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
 		if pos < 1 {
@@ -106,7 +106,7 @@ func (p *Piece) setBottomBoundry() {
 
 // Calculate top-left boundry based off current position of a piece
 func (p *Piece) setTopLeftBoundry() {
-	pos := p.curPos
+	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
 		// fmt.Println(pos)
@@ -131,7 +131,7 @@ func (p *Piece) setTopLeftBoundry() {
 
 // Calculate top-right boundry based off current position of a piece
 func (p *Piece) setTopRightBoundry() {
-	pos := p.curPos
+	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
 		if pos > 64 {
@@ -155,7 +155,7 @@ func (p *Piece) setTopRightBoundry() {
 
 // Calculate bottom-right boundry based off current position of a piece
 func (p *Piece) setBottomRightBoundry() {
-	pos := p.curPos
+	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
 		if pos < 9 {
@@ -179,7 +179,7 @@ func (p *Piece) setBottomRightBoundry() {
 
 // Calculate bottom-left boundry based off current position of a piece
 func (p *Piece) setBottomLeftBoundry() {
-	pos := p.curPos
+	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
 		if pos < 1 {
@@ -220,5 +220,5 @@ func (p *Piece) setBoundries() {
 		p.setBottomLeftBoundry()
 	}
 
-	// fmt.Printf("%v %8v: %v %v %v %v %v %v %v %v \n", p.symbol, p.kind, p.xBoundry.left, p.diagonalBoundry.topLeft, p.yBoundry.top, p.diagonalBoundry.topRight, p.xBoundry.right, p.diagonalBoundry.bottomRight, p.yBoundry.bottom, p.diagonalBoundry.bottomLeft)
+	// fmt.Printf("%v %8v: %v %v %v %v %v %v %v %v \n", p.Symbol, p.Kind, p.xBoundry.left, p.diagonalBoundry.topLeft, p.yBoundry.top, p.diagonalBoundry.topRight, p.xBoundry.right, p.diagonalBoundry.bottomRight, p.yBoundry.bottom, p.diagonalBoundry.bottomLeft)
 }
