@@ -236,6 +236,11 @@ piece.
     ```
 - To calculate move position in various directions from the current position of the piece:
 ![Move Positions Calculations](/images/move-positions.jpg)
+- To generate test coverage:
+    ```sh
+    go test ./... -coverprofile=test_coverage.txt
+    go tool cover -html=test_coverage.txt -o test_coverage.html
+    ```
 
 ------
 
