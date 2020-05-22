@@ -37,7 +37,7 @@ func TestCreateChessBoardReturnsPointerToChessboardType(t *testing.T) {
 	cb := CreateChessBoard()
 	str := reflect.TypeOf(cb).String()
 
-	if str != "*chess.ChessBoard" {
+	if str != "*engine.ChessBoard" {
 		t.Error("Failed to create Chessboard!")
 	}
 }

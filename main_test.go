@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"github.com/aditya43/chess/chess"
+	chess "github.com/aditya43/chess/engine"
 )
 
 // Test if error is returned when user inputs a single word
