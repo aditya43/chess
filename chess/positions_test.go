@@ -31,3 +31,17 @@ func TestMovePositionsAreGeneratedInTopDirectionForNonPawnTypePiece(t *testing.T
 
 	p = nil // Delete piece
 }
+
+// Test move positions are generated in bottom direction for a non pawn type piece
+func TestMovePositionsAreGeneratedInBottomDirectionForNonPawnTypePiece(t *testing.T) {
+	cb := CreateChessBoard()
+	p := CreatePiece(20, "rook") // Create piece
+	p.AvailPos = make(map[int]bool)
+	p.addPositions(cb, p.yBoundry.bottom, p.maxY, Negative, 1)
+
+	if !p.AvailPos[19] && !p.AvailPos[18] && !p.AvailPos[17] {
+		t.Errorf("Failed to test if positions are generated in bottom direction for a non pawn type piece! Got: %v", p.AvailPos)
+	}
+
+	p = nil // Delete piece
+}
