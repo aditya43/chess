@@ -1,6 +1,8 @@
 ## Chess
 Simple program simulating movements of various types of pieces on the empty chessboard.
 
+![Screenshot](/images/screen.jpg)
+
 ------
 
 ## Current Status
