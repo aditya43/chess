@@ -34,3 +34,14 @@ func TestUpdateMovePositionsUpdatesAvailableMovePositionsForPiece(t *testing.T) 
 		t.Error("Failed to test if a updateMovePositions() func updates available move positions for a piece")
 	}
 }
+
+// Test if the updateMovePositions() func updates correct number of available move positions for a piece
+func TestUpdateMovePositionsUpdateCorrectNumberOfMovePositionsForPiece(t *testing.T) {
+	cb := CreateChessBoard()
+	p := CreatePiece(29, "horse") // Create piece
+	p.updateMovePositions(cb)
+
+	if len(p.AvailPos) != 8 {
+		t.Error("Failed to test if a updateMovePositions() func updates correct number of available move positions for a piece")
+	}
+}
