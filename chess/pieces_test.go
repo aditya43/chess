@@ -23,3 +23,14 @@ func TestCreatePieceCreatesPiece(t *testing.T) {
 		t.Error("Failed to test if a CreatePiece() func creates a piece")
 	}
 }
+
+// Test if the updateMovePositions() func updates available move positions for a piece
+func TestUpdateMovePositionsUpdatesAvailableMovePositionsForPiece(t *testing.T) {
+	cb := CreateChessBoard()
+	p := CreatePiece(20, "pawn") // Create piece
+	p.updateMovePositions(cb)
+
+	if len(p.AvailPos) < 1 {
+		t.Error("Failed to test if a updateMovePositions() func updates available move positions for a piece")
+	}
+}
