@@ -27,9 +27,9 @@ github.com/aditya43/chess/main.go:124.54,128.30 3 0
 github.com/aditya43/chess/main.go:132.2,134.17 3 0
 github.com/aditya43/chess/main.go:128.30,130.3 1 0
 github.com/aditya43/chess/engine/boundries.go:24.34,27.25 2 1
-github.com/aditya43/chess/engine/boundries.go:27.25,28.14 1 1
+github.com/aditya43/chess/engine/boundries.go:27.25,28.15 1 1
 github.com/aditya43/chess/engine/boundries.go:32.3,32.15 1 1
-github.com/aditya43/chess/engine/boundries.go:28.14,30.4 1 0
+github.com/aditya43/chess/engine/boundries.go:28.15,30.4 1 1
 github.com/aditya43/chess/engine/boundries.go:32.15,33.15 1 1
 github.com/aditya43/chess/engine/boundries.go:34.32,36.11 2 1
 github.com/aditya43/chess/engine/boundries.go:37.12,38.13 1 1
@@ -48,9 +48,9 @@ github.com/aditya43/chess/engine/boundries.go:74.16,75.15 1 1
 github.com/aditya43/chess/engine/boundries.go:76.39,78.11 2 1
 github.com/aditya43/chess/engine/boundries.go:79.12,80.10 1 1
 github.com/aditya43/chess/engine/boundries.go:87.36,90.25 2 1
-github.com/aditya43/chess/engine/boundries.go:90.25,91.14 1 1
+github.com/aditya43/chess/engine/boundries.go:90.25,91.15 1 1
 github.com/aditya43/chess/engine/boundries.go:95.3,95.15 1 1
-github.com/aditya43/chess/engine/boundries.go:91.14,93.4 1 0
+github.com/aditya43/chess/engine/boundries.go:91.15,93.4 1 1
 github.com/aditya43/chess/engine/boundries.go:95.15,96.15 1 1
 github.com/aditya43/chess/engine/boundries.go:97.38,99.11 2 1
 github.com/aditya43/chess/engine/boundries.go:100.12,101.10 1 1
@@ -87,9 +87,9 @@ github.com/aditya43/chess/engine/boundries.go:189.12,190.13 1 1
 github.com/aditya43/chess/engine/boundries.go:197.40,198.14 1 1
 github.com/aditya43/chess/engine/boundries.go:202.2,204.25 2 1
 github.com/aditya43/chess/engine/boundries.go:198.14,200.3 1 1
-github.com/aditya43/chess/engine/boundries.go:204.25,205.14 1 1
+github.com/aditya43/chess/engine/boundries.go:204.25,205.15 1 1
 github.com/aditya43/chess/engine/boundries.go:209.3,209.15 1 1
-github.com/aditya43/chess/engine/boundries.go:205.14,207.4 1 0
+github.com/aditya43/chess/engine/boundries.go:205.15,207.4 1 1
 github.com/aditya43/chess/engine/boundries.go:209.15,210.15 1 1
 github.com/aditya43/chess/engine/boundries.go:211.38,213.11 2 1
 github.com/aditya43/chess/engine/boundries.go:214.29,216.11 2 1
