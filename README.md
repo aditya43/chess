@@ -109,26 +109,31 @@ WIP (Work In Progress)!
 - Chessboard struct:
     ```go
     type ChessBoard struct {
-        cells    map[int]string // Numeric Position to Text Representation. For e.g. 10 -> B2
-        pieces   map[int]*Piece // Numeric Position --> Piece. For printing purposes only
-        strCells map[string]int // Text Representation to Numeric Position of a cell
+        Cells    map[int]string // Numeric Position to Text Representation. For e.g. 10 -> B2
+        Pieces   map[int]*Piece // Numeric Position --> Piece. For printing purposes only
+        StrCells map[string]int // Text Representation to Numeric Position of a cell
     }
     ```
 - Piece struct:
     ```go
     type Piece struct {
-        name            string          // Name. e.g. king, queen, horse, pawn, rook, bishop
-        curPos          int             // Numeric position on board
-        symbol          string          // e.g. ♚, ♛, ♜, ♝, ♞
-        isHorse         bool            // Is current piece a Horse
-        isPawn          bool            // Is current piece a Pawn
-        xAllow          bool            // Is piece allowed to traverse in X direction
-        yAllow          bool            // Is piece allowed to traverse in Y direction
-        crossAllow      bool            // Is piece allowed to traverse in diagonal direction
-        maxX            int             // Max number of cells a piece can traverse in X direction
-        maxY            int             // Max number of cells a piece can traverse in Y direction
-        maxCross        int             // Max number of cells a piece can traverse in diagonal direction
-        availPos        map[int]bool    // Available move positions for a piece
+        Kind   string // Kind of piece. e.g. king, queen, horse, pawn, rook, bishop
+        CurPos int    // Numeric position on board
+        Symbol string // e.g. ♚, ♛, ♜, ♝, ♞
+
+        isHorse bool // Is current piece a Horse
+        isPawn  bool // Is current piece a Pawn
+
+        xAllow     bool // Is piece allowed to traverse in X direction
+        yAllow     bool // Is piece allowed to traverse in Y direction
+        crossAllow bool // Is piece allowed to traverse in diagonal direction
+
+        maxX     int // Max number of cells a piece can traverse in X direction
+        maxY     int // Max number of cells a piece can traverse in Y direction
+        maxCross int // Max number of cells a piece can traverse in diagonal direction
+
+        AvailPos map[int]bool // Available move positions for a piece
+
         xBoundry        XBoundry        // Horizontal boundries
         yBoundry        YBoundry        // Vertical boundries
         diagonalBoundry DiagonalBoundry // Diagonal boundries
