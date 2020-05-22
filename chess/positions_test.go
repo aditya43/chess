@@ -73,3 +73,37 @@ func TestMovePositionsAreGeneratedInRightDirectionForNonPawnTypePiece(t *testing
 
 	p = nil // Delete piece
 }
+
+// Test correct move positions are generated for different types of pieces
+func TestCorrectMovePositionsAreGeneratedForDifferentTypesOfPieces(t *testing.T) {
+	// 29
+	cb := CreateChessBoard()
+	kinds := [6]string{"king", "queen", "bishop", "horse", "rook", "pawn"}
+	positions := map[string][]int{
+		"king":   {36, 20, 30, 28, 37, 21, 38, 22},
+		"queen":  {13, 15, 50, 2, 28, 26, 45, 61, 22, 32, 37, 43, 57, 30, 53, 21, 5, 47, 36, 20, 27, 38, 8, 31, 25, 56, 11},
+		"bishop": {15, 36, 43, 20, 11, 22, 47, 56, 8, 50, 57, 2, 38},
+		"horse":  {35, 44, 46, 39, 14, 12, 23, 19},
+		"rook":   {21, 27, 5, 53, 13, 30, 31, 28, 45, 61, 32, 26, 25, 37},
+		"pawn":   {30},
+	}
+
+	for _, v := range kinds {
+		p := CreatePiece(29, v)
+		p.updateMovePositions(cb)
+
+		if len(p.AvailPos) < 1 {
+			t.Errorf("0 move positions are generated for piece type: %v at position 29(D5)", p.Kind)
+		}
+
+		if len(p.AvailPos) != len(positions[p.Kind]) {
+			t.Errorf("Wrong number of positions generated for piece type %v. Expected %v positions. Got %v positions", p.Kind, len(positions[p.Kind]), len(p.AvailPos))
+		}
+
+		for _, pos := range positions[p.Kind] {
+			if !p.AvailPos[pos] {
+				t.Errorf("Expected position %v (%v) is not set for a piece type %v", pos, cb.Cells[pos], p.Kind)
+			}
+		}
+	}
+}
