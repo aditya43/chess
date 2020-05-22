@@ -85,6 +85,7 @@ func (p *Piece) updateMovePositions(b *ChessBoard) {
 }
 
 // Create piece
+//
 // pos: Numeric position of a piece on board
 // n: Piece type
 func CreatePiece(pos int, n string) *Piece {

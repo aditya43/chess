@@ -52,11 +52,36 @@ Simple program simulating movements of various types of pieces on the empty ches
 
 ## APIs
 - **ChessBoard**
-    * `CreateChessBoard()`: Create cells with their numeric identifiers and return a pointer to the `ChessBoard struct`.
-    * `PlacePiece()`: Place piece on a chessboard and update available move positions for a piece.
-    * `Print()`: Render chessboard with a piece.
+    * `CreateChessBoard()`:
+        ```go
+        // Create new chessboard
+        // Create cells with their numeric identifiers
+        func CreateChessBoard() *ChessBoard
+        ```
+
+    * `PlacePiece()`:
+        ```go
+        // Place piece on a chessboard and update
+        // available move positions for a piece.
+        //
+        // pos 	numeric position on board
+        // p 	Piece
+        func (b *ChessBoard) PlacePiece(pos int, p *Piece)
+        ```
+    * `Print()`:
+        ```go
+        // Render chessboard with a piece
+        func (b *ChessBoard) Print(p *Piece)
+        ```
 - **Piece**
-    * `CreatePiece()`: Create a piece and add available move positions.
+    * `CreatePiece()`:
+        ```go
+        // Create piece
+        //
+        // pos: Numeric position of a piece on board
+        // n: Piece type
+        func CreatePiece(pos int, n string) *Piece
+        ```
 
 ------
 
