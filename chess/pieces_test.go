@@ -60,3 +60,18 @@ func TestUpdateMovePositionsGenerateCorrectMovePositionsForPiece(t *testing.T) {
 		}
 	}
 }
+
+// Test if move positions are generated for different types of pieces
+func TestMovePositionsAreGeneratedForDifferentTypesOfPieces(t *testing.T) {
+	kinds := [6]string{"king", "queen", "bishop", "horse", "rook", "pawn"}
+
+	for _, v := range kinds {
+		p := CreatePiece(28, v)
+
+		if len(p.AvailPos) < 0 {
+			t.Fatalf("Move positions are not generated for piece type %v at position %v", p.Kind, p.CurPos)
+		}
+
+		p = nil
+	}
+}
