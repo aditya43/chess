@@ -98,9 +98,17 @@ func BenchmarkCreateChessBoard(b *testing.B) {
 func BenchmarkGenerateMovePositionsForPiece(b *testing.B) {
 	cb := chess.CreateChessBoard()
 	p := chess.CreatePiece(29, "pawn")
-
 	b.ResetTimer()
+
 	for i := 0; i < b.N; i++ {
 		cb.PlacePiece(1, p)
+	}
+}
+
+// Benchmark create chessboard and create piece
+func BenchmarkCreateChessBoardAndPiece(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = chess.CreateChessBoard()
+		_ = chess.CreatePiece(29, "pawn")
 	}
 }
