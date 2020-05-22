@@ -113,11 +113,19 @@ func TestHorseNotAllowedToMake2Left1TopMove(t *testing.T) {
 	if canMakeTwoLeftOneTop(15) {
 		t.Error("Horse shoudln't make make 2 left, 1 top move")
 	}
+
+	if canMakeTwoLeftOneTop(32) {
+		t.Error("Horse shoudln't make make 2 left, 1 top move")
+	}
 }
 
 // Test if a horse is not allowed to make 2 left, 1 down
 func TestHorseNotAllowedToMake2Left1DownMove(t *testing.T) {
 	if canMakeTwoLeftOneDown(16) {
+		t.Error("Horse shoudln't make make 2 left, 1 down move")
+	}
+
+	if canMakeTwoLeftOneDown(41) {
 		t.Error("Horse shoudln't make make 2 left, 1 down move")
 	}
 }
