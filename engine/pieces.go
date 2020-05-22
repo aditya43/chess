@@ -149,12 +149,14 @@ func CreatePiece(pos int, n string) *Piece {
 		}
 	case "pawn":
 		p = &Piece{
-			Kind:   n,
-			CurPos: pos,
-			Symbol: "♙",
-			isPawn: true,
-			yAllow: true,
-			maxY:   1,
+			Kind:       n,
+			CurPos:     pos,
+			Symbol:     "♙",
+			isPawn:     true,
+			yAllow:     true,
+			maxY:       1,
+			crossAllow: true,
+			maxCross:   1,
 		}
 	}
 

@@ -155,6 +155,10 @@ func (p *Piece) setTopRightBoundry() {
 
 // Calculate bottom-right boundry based off current position of a piece
 func (p *Piece) setBottomRightBoundry() {
+	if p.isPawn {
+		return
+	}
+
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
@@ -179,6 +183,10 @@ func (p *Piece) setBottomRightBoundry() {
 
 // Calculate bottom-left boundry based off current position of a piece
 func (p *Piece) setBottomLeftBoundry() {
+	if p.isPawn {
+		return
+	}
+
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
