@@ -1,6 +1,7 @@
 package engine
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -106,6 +107,16 @@ func TestCorrectMovePositionsAreGeneratedForDifferentTypesOfPieces(t *testing.T)
 			}
 		}
 	}
+}
+
+// Test if correct move positions are generated for king
+func TestMovePositionsForKing(t *testing.T) {
+	cb := CreateChessBoard()
+	p := CreatePiece(32, "king")
+	p.updateMovePositions(cb)
+
+	fmt.Println(p.AvailPos)
+	fmt.Println(p.xBoundry.right)
 }
 
 // Test if a horse is not allowed to make 2 left, 1 top move

@@ -25,7 +25,7 @@ func (p *Piece) setLeftBoundry() {
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
-		if pos <= 1 {
+		if pos < 1 {
 			return
 		}
 
@@ -46,7 +46,7 @@ func (p *Piece) setRightBoundry() {
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
-		if pos >= 64 {
+		if pos > 64 {
 			return
 		}
 
@@ -67,7 +67,7 @@ func (p *Piece) setTopBoundry() {
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
-		if pos >= 64 {
+		if pos > 64 {
 			return
 		}
 
@@ -88,7 +88,7 @@ func (p *Piece) setBottomBoundry() {
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
-		if pos <= 1 {
+		if pos < 1 {
 			return
 		}
 
@@ -140,7 +140,7 @@ func (p *Piece) setTopRightBoundry() {
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
-		if pos >= 64 {
+		if pos > 64 {
 			return
 		}
 
@@ -202,7 +202,7 @@ func (p *Piece) setBottomLeftBoundry() {
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
-		if pos <= 1 {
+		if pos < 1 {
 			return
 		}
 
