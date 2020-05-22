@@ -241,7 +241,6 @@ horizontal step)
         - Can move only 1 step at a time, in the forward direction, vertically.
 Can also move 1 step forward diagonally, in order to eliminate an opposing
 piece.
-        - **Since there is only 1 side (as in Black/White), diagonal traversal functionality for a pawn piece will be ommitted.**
     * Bishop
         - Can move across the board only diagonally
 - Skeleton for adding move positions for various types of pieces:
