@@ -7,7 +7,7 @@ Simple program simulating movements of various types of pieces on the empty ches
 
 ## How To Run?
 - **macOS**:
-    * Download executable program: [https://github.com/aditya43/chess/raw/master/executables/chess_mac](https://github.com/aditya43/chess/raw/master/executables/chess_mac)
+    * Download executable program: [https://github.com/aditya43/chess/raw/master/.bin/chess_mac](https://github.com/aditya43/chess/raw/master/.bin/chess_mac)
     * Open terminal. Press `Command + Spacebar` to open `Spotlight` and type `Terminal`.
     * Go to downloaded executable's location in your terminal:
         ```sh
@@ -19,7 +19,7 @@ Simple program simulating movements of various types of pieces on the empty ches
         ./chess_mac
         ```
 - **Linux**:
-    * Download executable program: [https://github.com/aditya43/chess/raw/master/executables/chess_linux](https://github.com/aditya43/chess/raw/master/executables/chess_linux)
+    * Download executable program: [https://github.com/aditya43/chess/raw/master/.bin/chess_linux](https://github.com/aditya43/chess/raw/master/.bin/chess_linux)
     * Open terminal (Press `CTRL + ALT + T`).
     * Go to downloaded executable's location in your terminal:
         ```sh
@@ -31,7 +31,7 @@ Simple program simulating movements of various types of pieces on the empty ches
         ./chess_linux
         ```
 - **Windows**:
-    * Download executable program: [https://github.com/aditya43/chess/raw/master/executables/chess_windows.exe](https://github.com/aditya43/chess/raw/master/executables/chess_windows.exe)
+    * Download executable program: [https://github.com/aditya43/chess/raw/master/.bin/chess_windows.exe](https://github.com/aditya43/chess/raw/master/.bin/chess_windows.exe)
     * For best experience, open `Git Bash`. If you don't have `Git Bash`, open `Command Prompt`.
     * Go to downloaded executable's location in your terminal:
         ```sh
