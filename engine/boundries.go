@@ -123,6 +123,12 @@ func (p *Piece) setTopLeftBoundry() {
 				p.diagonalBoundry.topLeft = pos
 				return
 			default:
+				if p.isPawn {
+					// Pawn is not on left boundry or top boundry
+					// Calculate and set its top-left position
+					p.diagonalBoundry.topLeft = pos - 7
+					return
+				}
 				pos -= 7
 			}
 		}
@@ -147,6 +153,12 @@ func (p *Piece) setTopRightBoundry() {
 				p.diagonalBoundry.topRight = pos
 				return
 			default:
+				if p.isPawn {
+					// Pawn is not on right boundry or top boundry
+					// Calculate and set its top-right position
+					p.diagonalBoundry.topRight = pos + 9
+					return
+				}
 				pos += 9
 			}
 		}

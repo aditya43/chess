@@ -4,15 +4,23 @@ import (
 	"testing"
 )
 
-// Test if correct move position is generated for pawn type piece
-func TestCorrectMovePositionIsGeneratedForPawnTypePiece(t *testing.T) {
+// Test if correct move positions are generated for pawn type piece
+func TestCorrectMovePositionsAreGeneratedForPawnTypePiece(t *testing.T) {
 	cb := CreateChessBoard()
 	p := CreatePiece(20, "pawn") // Create piece
 	p.AvailPos = make(map[int]bool)
 	p.addPositions(cb, p.yBoundry.top, p.maxY, Positive, 1)
 
 	if !p.AvailPos[21] {
-		t.Error("Failed to test if correct move position is generated for pawn type piece!")
+		t.Error("Pawn doesn't have move position in upward direction!")
+	}
+
+	if !p.AvailPos[13] {
+		t.Error("Missing top-left move position for a pawn piece!")
+	}
+
+	if !p.AvailPos[29] {
+		t.Error("Missing top-right move position for a pawn piece!")
 	}
 }
 
