@@ -87,14 +87,21 @@ WIP (Work In Progress)!
 
 - **Benchmark Tests**
     ```diff
-    // User Input Validator
+    // Benchmark test for validateInput() func
     - BenchmarkUserInputValidator
 
-    // Create Chessboard
+    // Benchmark test for CreateChessBoard() func
     - BenchmarkCreateChessBoard
 
-    // Generate move positions for a piece
-    - BenchmarkGenerateMovePositionsForPiece
+    // Benchmark test for moving a piece on chessboard
+    - BenchmarkMovePieceOnChessBoard
+
+    // Benchmark create chessboard and create piece
+    - BenchmarkCreateChessBoardAndPiece
+
+    // Benchmark create chessboard, create piece and
+    // then move piece on a created chessboard
+    - BenchmarkCreateChessBoardAndPieceMoveItOnChessBoard
     ```
 
 ------
