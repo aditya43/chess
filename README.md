@@ -7,7 +7,7 @@ A program to calculate possible move positions for various types of chess pieces
 
 ## How To Run?
 - **macOS**:
-    * Download executable program: [https://github.com/aditya43/chess/raw/master/.bin/chess_mac](https://github.com/aditya43/chess/raw/master/.bin/chess_mac)
+    * Download executable program: [https://github.com/aditya43/chess/raw/master/bin/chess_mac](https://github.com/aditya43/chess/raw/master/bin/chess_mac)
     * Open terminal. Press `Command + Spacebar` to open `Spotlight` and type `Terminal`.
     * Go to downloaded executable's location in your terminal:
         ```sh
@@ -18,8 +18,14 @@ A program to calculate possible move positions for various types of chess pieces
         ```sh
         ./chess_mac
         ```
+    * **NOTE:** If you receive an error saying `"chess_mac" cannot be opened because the developer cannot be verified`, please perform below steps:
+        - Open `Finder` and go to the downloaded executable's location.
+        - Right-Click (Control-click) on `chess_mac` and click on `Open`
+        ![Right click on chess_mac file and click on Open](/images/how_to_open_in_mac/open1.jpg)
+        - Click on `OK`
+        ![Click on OK](/images/how_to_open_in_mac/open2.jpg)
 - **Linux**:
-    * Download executable program: [https://github.com/aditya43/chess/raw/master/.bin/chess_linux](https://github.com/aditya43/chess/raw/master/.bin/chess_linux)
+    * Download executable program: [https://github.com/aditya43/chess/raw/master/bin/chess_linux](https://github.com/aditya43/chess/raw/master/bin/chess_linux)
     * Open terminal (Press `CTRL + ALT + T`).
     * Go to downloaded executable's location in your terminal:
         ```sh
@@ -31,7 +37,7 @@ A program to calculate possible move positions for various types of chess pieces
         ./chess_linux
         ```
 - **Windows**:
-    * Download executable program: [https://github.com/aditya43/chess/raw/master/.bin/chess_windows.exe](https://github.com/aditya43/chess/raw/master/.bin/chess_windows.exe)
+    * Download executable program: [https://github.com/aditya43/chess/raw/master/bin/chess_windows.exe](https://github.com/aditya43/chess/raw/master/bin/chess_windows.exe)
     * For best experience, open `Git Bash`. If you don't have `Git Bash`, open `Command Prompt`.
     * Go to downloaded executable's location in your terminal:
         ```sh
