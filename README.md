@@ -1,5 +1,5 @@
 ## Chess
-Simple program simulating movements of various types of pieces on the empty chessboard.
+A program to calculate possible move positions for various types of chess pieces on an empty chess board.
 
 ![Screenshot](/images/screen.jpg)
 
