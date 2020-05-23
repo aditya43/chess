@@ -70,8 +70,8 @@ Simple program simulating movements of various types of pieces on the empty ches
         ```
     * `Print()`:
         ```go
-        // Render chessboard with a piece
-        func (b *ChessBoard) Print(p *Piece)
+        // Render chessboard
+        func (b *ChessBoard) Print()
         ```
 - **Piece**
     * `CreatePiece()`:
