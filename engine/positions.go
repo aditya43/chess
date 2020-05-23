@@ -21,6 +21,11 @@ func (p *Piece) addPositions(b *ChessBoard, l int, max int, d Direction, f int) 
 
 	pos := p.CurPos
 	for i := 0; i < max; i++ {
+		if pos != p.CurPos && b.Pieces[pos] != nil { // Kill logic
+			p.AvailPos[pos] = true // Add move position
+			return
+		}
+
 		if l > 0 && pos == l { // Position has reached boundry
 			if pos != p.CurPos {
 				p.AvailPos[pos] = true // Add move position

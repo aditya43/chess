@@ -38,7 +38,7 @@ func takeAction(w []string, cr *bufio.Reader) {
 	p := game.CreatePiece(pos, w[0]) // Create a piece
 	cb.PlacePiece(pos, p)            // Place a piece on chessboard
 
-	printOutput(cb, p) // Print output
+	printOutput(cb)    // Print output
 	restartProgram(cr) // Restart program
 }
 
@@ -119,17 +119,19 @@ func restartProgram(cr *bufio.Reader) {
 	checkExit(s) // User can quit program by typing 'exit'
 }
 
-// Print available move positions and render
-// chessboard with a piece on it
-func printOutput(cb *game.ChessBoard, p *game.Piece) {
-	m := ""
-	color.Yellow.Print("Available Moves: ")
+// Print available move positions
+// and render a chessboard
+func printOutput(cb *game.ChessBoard) {
+	for _, p := range cb.Pieces {
+		m := ""
+		color.Yellow.Print("Available Moves: ")
 
-	for pos := range p.AvailPos {
-		m += strings.ToUpper(cb.Cells[pos]) + ", "
+		for pos := range p.AvailPos {
+			m += strings.ToUpper(cb.Cells[pos]) + ", "
+		}
+
+		color.New(color.FgGreen, color.BgBlack, color.OpBold).Printf("%v\n\n", strings.TrimSuffix(m, ", "))
 	}
-
-	color.New(color.FgGreen, color.BgBlack, color.OpBold).Printf("%v\n\n\n", strings.TrimSuffix(m, ", "))
-	cb.Print(p)
+	cb.Print() // Render chessboard
 	fmt.Print("\n")
 }
