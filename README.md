@@ -218,9 +218,10 @@ Simple program simulating movements of various types of pieces on the empty ches
 - Piece struct:
     ```go
     type Piece struct {
-        Kind   string // Kind of piece. e.g. king, queen, horse, pawn, rook, bishop
-        CurPos int    // Numeric position on board
-        Symbol string // e.g. ♚, ♛, ♜, ♝, ♞
+        Kind     string       // Kind of piece. e.g. king, queen, horse, pawn, rook, bishop
+        CurPos   int          // Numeric position on board
+        Symbol   string       // e.g. ♚, ♛, ♜, ♝, ♞
+        AvailPos map[int]bool // Available move positions for a piece
 
         isHorse bool // Is current piece a Horse
         isPawn  bool // Is current piece a Pawn
@@ -232,8 +233,6 @@ Simple program simulating movements of various types of pieces on the empty ches
         maxX     int // Max number of cells a piece can traverse in X direction
         maxY     int // Max number of cells a piece can traverse in Y direction
         maxCross int // Max number of cells a piece can traverse in diagonal direction
-
-        AvailPos map[int]bool // Available move positions for a piece
 
         xBoundry        XBoundry        // Horizontal boundries
         yBoundry        YBoundry        // Vertical boundries
