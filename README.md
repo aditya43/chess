@@ -14,6 +14,10 @@ A program to calculate possible move positions for various types of chess pieces
         # Replace "aditya" with your username
         cd /home/aditya/Downloads
         ```
+    * Set executable permission for `chess_mac` file:
+        ```sh
+        chmod +x ./chess_mac
+        ```
     * Execute following command to run the program:
         ```sh
         ./chess_mac
@@ -31,6 +35,10 @@ A program to calculate possible move positions for various types of chess pieces
         ```sh
         # Replace "aditya" with your username
         cd /home/aditya/Downloads
+        ```
+    * Set executable permission for `chess_linux` file:
+        ```sh
+        chmod +x ./chess_linux
         ```
     * Execute following command to run the program:
         ```sh
