@@ -174,11 +174,11 @@ func (p *Piece) setBottomRightBoundry() {
 	pos := p.CurPos
 
 	for i := 0; i < 8; i++ {
-		if pos < 9 {
+		if pos < 2 {
 			return
 		}
 
-		if pos >= 9 {
+		if pos >= 2 {
 			switch pos {
 			case 1, 9, 17, 25, 33, 41, 49, 57: // Bottom boundry numeric positions on board
 				p.diagonalBoundry.bottomRight = pos

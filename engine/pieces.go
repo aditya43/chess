@@ -1,5 +1,7 @@
 package engine
 
+import "fmt"
+
 // Chessboard piece
 type Piece struct {
 	Kind     string       // Kind of piece. e.g. king, queen, horse, pawn, rook, bishop
@@ -161,6 +163,7 @@ func CreatePiece(pos int, n string) *Piece {
 
 	// Set boundries for a piece if it can move on X, Y axis as well as diagonally
 	p.setBoundries()
+	fmt.Println(p.diagonalBoundry)
 
 	return p
 }
